@@ -1,0 +1,194 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Arial;
+}
+
+	/* Фиксация фона */ 
+.fon {
+	position: fixed;
+}
+
+	/* Главное меню */
+.mainmenu {
+	width: 100%;
+	background-color: #212121;
+	height: 70px;
+	position: fixed;
+	border-bottom: 2px solid #d93604;
+	z-index: 1;
+}
+	
+	/* Кнoпка "Главная" */
+#namelink {
+}
+
+.namelink {
+	float: left;
+	color: #d93604;
+	font-weight: bold;
+	font-size: 35px;
+	text-decoration: none;
+	padding: 15px 15px 15px 184px;
+	transition: 0.3s;
+}
+
+.namelink:hover {
+	color: #141414;	
+	background-color: #d93604;
+}
+
+/* Поиск */
+.searchbox {
+	float: left;
+	position: fixed;
+	width: 400px;
+	padding-left: 8px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	border-left: 2px solid  #d93604;
+	display: inline-block;
+}
+
+.searchbox input {
+	font-family: Arial;
+	font-size: 20px;
+  	width: 100%;
+  	height: 50px;
+  	padding-left: 10px;
+  	border: 2px solid #d93604;
+  	border-radius: 5px;
+  	outline: none;
+  	background: #171717;
+  	color: #9E9C9C;
+}
+
+.searchbox button {
+  	position: absolute; 
+  	top: 0;
+  	margin-top: 9px;
+  	right: 0px;
+  	width: 50px;
+  	height: 50px;
+  	border: none;
+  	background: #d93604;
+  	border-radius: 0 5px 5px 0;
+  	cursor: pointer;
+}
+
+.searchbox button:before {
+  	content: "\f002";
+  	font-family: FontAwesome;
+  	font-size: 20px;
+  	color: #0a0000;
+}
+	/* end */
+
+
+	/* context */
+#wrapper {
+	position: relative;
+	padding-top: 85px;
+	widht: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+	
+	/* top */
+#top {
+	width: 100%;
+	height: 600px;
+	float: left;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	background-color: #525151;
+}
+
+#avatar-login {
+	color: white;
+	font-size: 40px;
+	margin-top: 20px;
+}
+
+#img-avatar {
+	margin: 0px 15px 15px 15px;
+	border-radius: 10px;
+	float: left;
+}
+
+#exit {
+	top: 105px;
+	right: 	20px;
+	position: absolute;
+	color: white;
+	font-size: 40px;
+	text-decoration: none;
+	transition: 0.2s;
+}
+
+#exit:hover {
+	color: red;
+}
+
+	/* main */
+#main {
+	width: 76.9230769231%;
+	height: 870px;
+	float: left;
+	background-color: #525151;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+	
+	/* sidebar */
+#sidebar {
+	width: 23.0769230769%;
+	height: 870px;
+	float: right;
+	background-color: #363636;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+	#main, #sidebar {
+		float: none;
+		width: 100%;
+	}
+
+	#main {
+		border-top-left-radius: 0px;
+	}
+
+	.namelink {
+		margin-left: 5px;
+	}
+}
+
+	
+		/* Отключение поисковика на малых экранах */
+@media screen and (max-width: 1280px) {
+	.searchbox {
+	display: none;
+	}
+
+	.searchbox input {
+	display: none;
+	}
+
+	.searchbox button {
+  		display: none;
+	}
+
+	.searchbox button:before {
+  		display: none;
+	} 
+}
+	/* end */

@@ -1,0 +1,158 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+	/* Фиксация фона */ 
+.fon {
+	width: 100%;
+
+	position: fixed;
+
+}
+
+.content {
+	position: absolute;
+	width: 500px;
+	height: 545px;
+    left: 50%;
+    top: 50%;
+    margin: -272px 0 0 -250px;
+}
+
+#auth {
+	position: relative;
+	width: 500px;
+    border-radius: 8px;
+	background-color: #262626;
+}
+
+.register {
+	position: relative;
+	top: 30px;
+	text-align: center;
+	color: #d93604;
+	font-size: 30px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin: 20px 50px 0px 50px;
+}
+
+input {
+	margin: 10px 0px;
+	padding: 10px 5px;
+	font-size: 25px;
+	color: #d93604;
+	background-color: #262626;
+	border: unset;
+	border-bottom: 2px solid #d93604;
+	outline: none;
+}
+
+::placeholder {
+    color: red;
+    opacity: 1;
+}
+.password {
+
+}
+#password-input {
+	width: 400px;
+	margin: 10px 0px;
+	padding: 10px 5px;
+	font-size: 25px;
+	color: #d93604;
+	background-color: #262626;
+	border: unset;
+	border-bottom: 2px solid #d93604;
+	outline: none;
+}
+
+
+#register {
+	width: 200px;
+	margin: 20px 100px 20px 100px;
+	padding: 12px 5px;
+	color: #262626;
+	background-color: #d93604;
+	text-decoration: none;
+	border-radius: 6px;
+	border: none;
+	font-weight: bolder;
+	font-size: 25px;
+	transition: 0.2s;
+	cursor: pointer;
+	border: 2px solid #d93604;
+}
+
+#register:hover {
+	color: #d93604;
+	background-color: #262626;
+}
+
+#sinup {
+	text-align: center;
+	color: #d93604;
+	font-size: 22px;
+}
+
+.sinup {
+	margin-left: 10px;
+	padding: 3px 8px 3px 8px; 
+	color: #960000;
+	border-bottom: 2px solid #ad0000;
+	text-decoration: none;
+	font-size: 23px;
+	transition: 0.2s;
+}
+
+.sinup:hover {
+	color: #262626;
+	padding: 3px 8px 3px 8px; 
+	border-radius: 5px;
+	background-color: #ad0000;
+
+}
+
+#home {
+	position: relative;
+	width: 240px;
+	margin: 10px 0px 0px 0px ;
+	padding: 12px 5px;
+	color: #d93604;
+	background-color: #262626;
+	text-decoration: none;
+	border-radius: 6px;
+	border: none;
+	font-weight: bolder;
+	font-size: 25px;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+#home:hover {
+	color: #262626;
+	background-color: #d93604;
+}
+
+.messege {
+	position: relative;
+	text-align: center;
+	padding: 5px;
+	color: #d93604;
+	background-color: rgba(	217, 54, 4, 0.3);
+	box-shadow: 0px 0px 30px 10px #d93604;
+	border-radius: 6px;
+	font-size: 24px;
+}

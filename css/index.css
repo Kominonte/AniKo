@@ -1,0 +1,171 @@
+* {margin: 0; padding: 0;}
+
+body {
+	font-family: 'Comfortaa', cursive;
+}	
+
+	/* Фиксация фона */ 
+#background {
+	position: fixed;
+}
+
+#mainmenu {
+	top: 0; 
+	position: fixed;
+	height: 60px;
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid red;
+	background: #242424;
+	z-index: 1;
+}
+
+.menu-obj {
+	margin: 17px 0px 0px 0px;
+	float: right;
+	list-style-type: none;
+}
+
+.menu-obj-text {
+	margin: 0px 5px 0px 5px;
+	padding: 10px;
+	background: #bf0202;
+	border-radius: 6px;
+	border: 2px solid red;
+	color: #242424;
+	font-size: 23px;
+	font-weight: bold;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.menu-obj-text:hover {
+	background: #242424;
+	color: #bf0202;
+}
+
+.border {
+	padding: 15px;
+	float: right;
+	list-style-type: none;
+}
+
+.profile {
+	margin: 17px 0px 0px 0px;
+	float: right;
+	list-style-type: none;
+}
+
+.profile-text {
+	margin: 0px 5px 0px 5px;
+	padding: 10px;
+	background: #bf0202;
+	border-radius: 6px;
+	border: 2px solid red;
+	color: #242424;
+	font-size: 23px;
+	font-weight: bold;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.profile-text:hover {
+	background: #242424;
+	color: #bf0202;
+}
+
+.AniKo {
+	margin: 8px 0px 5px 0px;
+	float: left;
+	list-style-type: none;
+}
+
+.AniKo-text {
+	margin: 0px 5px 0px 5px;
+	padding: 10px 0px 1px 10px;
+	background: #242424;
+	color: #bf0202;
+	font-size: 45px;
+	font-weight: bold;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.AniKo-text:hover {
+	background: #bf0202;
+	color: #242424;
+}
+
+
+#wrapper {
+	position: relative;
+	padding-top: 85px;
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+	/* main */
+#main {
+	width: 1000px;
+	height: 2000px;
+	float: left;
+	background-color: #363636;
+	border-top-left-radius: 10px;
+	z-index: 1;
+}
+
+h2 {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 6px;
+	background:  #525151;
+	color: red;
+	text-align: center;
+	font-weight: ;
+	font-size: 20px;
+
+}
+
+.text {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 6px;
+	background:  #525151;
+	color: white;
+	font-weight: ;
+	font-size: 20px;
+}
+
+#anilibria-link {
+	text-decoration: none;
+	color: #f27474;
+}
+
+	/* sidebar */
+#sidebar {
+	width: 300px;
+	height: 2000px;
+	float: right;
+	background-color: #525151;
+	border-top-right-radius: 10px;
+	z-index: 1;
+}
+
+
+@media screen and (max-width: 1300px) {
+	#main, #sidebar {
+		float: none;
+		width: 100%;
+	}
+
+	#main {
+		border-top-left-radius: 0px;
+	}
+
+	#namelink {
+		padding: 15px 15px 15px 15px;
+		float: left;
+		transition: 0.3s;
+}
+
