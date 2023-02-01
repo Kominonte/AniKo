@@ -35,12 +35,12 @@
 						margin: -50px 0px 20px 365px;
 						width: 30px;
 						height: 30px;
-						background: url(img/eye);
+						background: url(../img/eye);
 						transition: 0.2s;
 	                }
 
 					.password-control.view {
-						background: url(img/eyec); 
+						background: url(../img/eyec); 
 						transition: 0.2s;
 					}
 				</style>

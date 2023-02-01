@@ -42,10 +42,10 @@
 
 			<ul id="menu">
 				<li class="menu-obj">
-				 <a class="menu-obj-text" href="#"> Добавить тайтл </a>
+				 <a class="menu-obj-text" href="title/add-title.php"> Добавить тайтл </a>
 				</li>
 				<li class="menu-obj">
-				 <a class="menu-obj-text" href="#">  Каталог</a>
+				 <a class="menu-obj-text" href="title/catalog.php">  Каталог</a>
 				</li>
 			</ul>
 

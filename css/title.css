@@ -1,0 +1,347 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+
+
+body {
+	font-family: Arial, sans-serif ;
+}
+
+	/* Фиксация фона */ 
+.fon {
+	position: fixed;
+}
+
+	/* Главное меню */
+.mainmenu {
+	width: 100%;
+	background-color: #212121;
+	height: 70px;
+	position: fixed;
+	border-bottom: 2px solid #d93604;
+	z-index: 1;
+}
+	
+	/* Кнoпка "Главная" */
+.namelink {
+}
+
+#namelink {
+	padding: 15px 15px 15px 184px;
+	border-right: 2px solid  #d93604;
+	color: #d93604;
+	font-weight: bold;
+	font-size: 35px;
+	text-decoration: none;
+	float: left;
+	transition: 0.3s;
+}
+
+#namelink:hover {
+	color: #141414;	
+	background-color: #d93604;
+}
+
+/* Поиск */
+.searchbox {
+	float: left;
+	position: fixed;
+	width: 400px;
+	padding-left: 8px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	display: inline-block;
+}
+
+.searchbox input {
+	font-family: Arial;
+	font-size: 20px;
+  	width: 100%;
+  	height: 50px;
+  	padding-left: 10px;
+  	border: 2px solid #d93604;
+  	border-radius: 5px;
+  	outline: none;
+  	background: #171717;
+  	color:  #d93604;
+}
+
+.searchbox button {
+  	position: absolute; 
+  	top: 0;
+  	margin-top: 9px;
+  	right: 0px;
+  	width: 50px;
+  	height: 50px;
+  	border: none;
+  	background: #d93604;
+  	border-radius: 0 5px 5px 0;
+  	cursor: pointer;
+}
+
+.searchbox button:before {
+  	content: "\f002";
+  	font-family: FontAwesome;
+  	font-size: 20px;
+  	color: #0a0000;
+}
+	/* end */
+
+
+#catalog {
+	margin: 10px 10px 10px 10px;
+	padding: 11px 10px 10px 10px;
+	border-radius: 5px;
+	float: right;
+	display: flex;
+	color:#d93604;
+	text-decoration: none;
+	font-size: 23px;
+	font-weight: bold;
+	transition: 0.2s;
+}
+
+#catalog:hover {
+	color: #212121;
+	background-color: #d93604;
+}
+
+
+#add-title {
+	margin: 10px 50px 10px 10px;
+	padding: 11px 10px 10px 10px;
+	border-radius: 5px;
+	float: right;
+	display: flex;
+	color:#d93604;
+	text-decoration: none;
+	font-size: 23px;
+	font-weight: bold;
+	transition: 0.2s;
+}
+
+#add-title:hover {
+	color: #212121;
+	background-color: #d93604;
+}
+
+#user {
+	padding: 21px 20px 20px 20px;
+	padding-bottom: 20px;
+	border-left: 2px solid #d93604;
+	float: right;
+	display: flex;
+	transition: 0.3s;
+	color: #d93604;
+	text-decoration: none;
+	font-size: 23px;
+	font-weight: bold;
+}
+
+#user:hover {
+	color: #212121;
+	background-color: #d93604;
+}
+
+	/* context */
+#wrapper {
+	position: relative;
+	padding-top: 85px;
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+	/* main */
+#main {
+	width: 76.9230769231%;
+	float: right;
+	background-color: #363636;
+	border-top-right-radius: 10px;
+	z-index: 1;
+}
+
+#description {
+	padding: 10px;
+	background-color: #212121;
+	margin: 15px;
+	border-radius: 7px;
+	font-size: 20px;
+	color: #d93604;
+
+}
+
+#player {
+	width: 96%;
+	margin: 0px 15px;
+	border-radius: 7px;
+}
+
+#h-com {
+	color: #d93604;
+}
+
+#comment {
+	font-size: 20px;
+	color: #d93604;
+}
+
+#add-com-text {
+	width: 100%;
+	height: 80px;
+	padding: 5px 5px;
+	font-size: 20px;
+	color: #d93604;
+	background-color: #212121;
+	border: unset;
+	border: 1px solid #d93604;
+	border-radius: 5px;
+	outline: none;
+}
+
+	
+#com-fon {
+	width: 96%;
+	padding: 10px;
+	margin: 15px;
+	border-radius: 7px;
+	background-color: #212121;
+}
+
+#add-com-btn {
+	width: 200px;
+	margin: 0px 0px 10px 78.7%;
+	padding: 12px 5px;
+	color: #262626;
+	background-color: #d93604;
+	text-decoration: none;
+	border-radius: 6px;
+	border: none;
+	font-weight: bolder;
+	font-size: 17px;
+	transition: 0.2s;
+	cursor: pointer;
+	border: 2px solid #d93604;
+}
+
+#add-com-btn:hover {
+	color: #d93604;
+	background-color: #262626;
+}
+
+	/* sidebar */
+#sidebar {
+	width: 23.0769230769%;
+	float: right;
+	background-color: #212121;
+	border-top-left-radius: 10px;
+	z-index: 1;
+}
+
+#poster {
+	width: 93%;
+	margin: 10px;
+	border-radius: 7px;
+}
+
+#title {
+	margin: 10px;
+	color: white;
+}
+
+.des {
+	margin: 10px;
+	color: white;
+}
+
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 12px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: #212121;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: #525151;
+
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color:  #363636;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #363636;
+}
+
+
+
+
+	/* Контрольные точки под разные устройства */
+
+@media screen and (max-width: 960px) {
+	#main, #sidebar {
+		float: none;
+		width: 100%;
+	}
+
+	#main {
+		border-top-left-radius: 0px;
+	}
+
+	#namelink {
+		padding: 15px 15px 15px 15px;
+		float: left;
+		transition: 0.3s;
+	}
+
+	/* Поиск */
+	.searchbox {
+		float: left;
+		position: fixed;
+		width: 50px;
+		padding-left: 8px;
+		padding-top: 9px;
+		padding-bottom: 9px;
+		display: inline-block;
+	}
+
+	.searchbox input {
+		display: none;
+	}
+
+	.searchbox button {
+	  	position: absolute; 
+	  	top: 0;
+	  	margin-top: 9px;
+	  	right: 0px;
+	  	width: 50px;
+	  	height: 50px;
+	  	border: none;
+	  	background: #d93604;
+	  	border-radius: 0 5px 5px 0;
+	  	cursor: pointer;
+	}
+		
+	.searchbox button:before {
+	  	content: "\f002";
+	  	font-family: FontAwesome;
+	  	font-size: 20px;
+	  	color: #0a0000;
+	}
+	/* end */
+
+	.user {
+		margin: 0px 0px 0px 20px;
+		padding: 20px 20px 20px 20px;
+	}
+
+}
