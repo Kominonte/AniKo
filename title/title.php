@@ -26,7 +26,7 @@
 <body>
 
 	<!-- Фон сайта -->
-	<img class="fon" src="img/fon-1.png">
+	<img class="fon" src="../img/fon-1.png">
 
 	<!-- Главное меню сайта -->
 	<div class="mainmenu">

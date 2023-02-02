@@ -9,7 +9,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
-	<link rel="stylesheet" href="../css/auth.css"> 
+	<link rel="stylesheet" href="../css/login.css"> 
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<title>Авторизация и регистрация</title>
 </head>
 <body>

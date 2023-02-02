@@ -1,9 +1,12 @@
+	<!-- Ссесия и подключение к БД -->
+
 <?php 
     session_start();
 
 	require_once 'vendor/connect.php';
 ?>
 
+	<!-- end -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +14,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
 	<link href="css/index.css" rel="stylesheet" >
 	<title>Главная</title>
 </head>
 <body>
 
+	<!-- Фон сайта -->
+
 	<img id="background" src="img/fon-1.png">
+
+	<!-- Главное меню -->
 
 		<nav id="mainmenu">
 
@@ -35,11 +43,9 @@
 				<li class="profile">
 				 <a class="profile-text" href="php/register.php"> Регистарация </a>
 				</li>
-				<li class="border">
-				</li>
 			</ul>
-		<?php endif; ?>
 
+		<?php endif; ?>
 			<ul id="menu">
 				<li class="menu-obj">
 				 <a class="menu-obj-text" href="title/add-title.php"> Добавить тайтл </a>
@@ -63,7 +69,7 @@
 			<div>
 				<h2> Винимание! </h2>
 				<p class="text">
-				 Это не официальный сайти Anilibria! Вот настоящая <a id="anilibria-link" target="_blank" href="https://www.anilibria.tv/">www.anilibria.tv</a>
+				 Это не официальный сайт Anilibria! Вот настоящая <a id="anilibria-link" target="_blank" href="https://www.anilibria.tv/">www.anilibria.tv</a>
 				 <br>
 				  Разраб берет у них плеер с постерами аниме и ничего на них не претендует, так как у него нету денег арендовать сервер приходится выкручиваться таким образом.
  				</p>

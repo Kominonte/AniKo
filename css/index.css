@@ -1,5 +1,6 @@
 * {margin: 0; padding: 0;}
 
+	/* Шрифт */
 body {
 	font-family: 'Comfortaa', cursive;
 }	
@@ -9,59 +10,60 @@ body {
 	position: fixed;
 }
 
+	/* Главное меню */ 
 #mainmenu {
 	top: 0; 
 	position: fixed;
 	height: 60px;
 	width: 100%;
 	border: none;
-	border-bottom: 2px solid red;
+	border-bottom: 2px solid #FF483D;
 	background: #242424;
 	z-index: 1;
 }
-
+	
+	/* Оъекты меню */
 .menu-obj {
 	margin: 17px 0px 0px 0px;
 	float: right;
 	list-style-type: none;
 }
 
+	/* Текст объектов */
 .menu-obj-text {
 	margin: 0px 5px 0px 5px;
 	padding: 10px;
-	background: #bf0202;
+	background: #FF483D;
 	border-radius: 6px;
-	border: 2px solid red;
+	border: 2px solid #FF483D;
 	color: #242424;
 	font-size: 23px;
 	font-weight: bold;
-	text-decoration: none;
+	text-decoration: #FF483D;
 	transition: 0.3s;
 }
 
 .menu-obj-text:hover {
 	background: #242424;
-	color: #bf0202;
+	color: #FF483D;
 }
 
-.border {
-	padding: 15px;
-	float: right;
-	list-style-type: none;
-}
+	
 
+	/* Профиль */
 .profile {
 	margin: 17px 0px 0px 0px;
 	float: right;
 	list-style-type: none;
 }
 
+	/* Текст профиля */
 .profile-text {
 	margin: 0px 5px 0px 5px;
 	padding: 10px;
-	background: #bf0202;
+	background: #FF483D;
 	border-radius: 6px;
-	border: 2px solid red;
+	border: 2px solid #FF483D;
 	color: #242424;
 	font-size: 23px;
 	font-weight: bold;
@@ -71,31 +73,25 @@ body {
 
 .profile-text:hover {
 	background: #242424;
-	color: #bf0202;
+	color: #FF483D;
 }
 
+	/* Название */
 .AniKo {
 	margin: 8px 0px 5px 0px;
 	float: left;
 	list-style-type: none;
 }
-
+	
+	/* Текст названия */
 .AniKo-text {
 	margin: 0px 5px 0px 5px;
 	padding: 10px 0px 1px 10px;
-	background: #242424;
-	color: #bf0202;
+	color: #FF483D;
 	font-size: 45px;
 	font-weight: bold;
 	text-decoration: none;
-	transition: 0.3s;
 }
-
-.AniKo-text:hover {
-	background: #bf0202;
-	color: #242424;
-}
-
 
 #wrapper {
 	position: relative;
@@ -115,7 +111,8 @@ body {
 	border-radius: 10px;
 	z-index: 1;
 }
-
+	
+	/* Заголовок */
 h2 {
 	margin: 10px;
 	padding: 10px;
@@ -127,7 +124,7 @@ h2 {
 	font-size: 20px;
 
 }
-
+	/* Текст мейна */
 .text {
 	margin: 10px;
 	padding: 10px;
@@ -138,6 +135,7 @@ h2 {
 	font-size: 20px;
 }
 
+	/* Стилизация ссылки */
 #anilibria-link {
 	text-decoration: none;
 	color: #f27474;
@@ -153,7 +151,7 @@ h2 {
 	z-index: 1;
 }
 
-
+	/* Адаптация под другие экраны */
 @media screen and (max-width: 1300px) {
 	#main, #sidebar {
 		float: none;

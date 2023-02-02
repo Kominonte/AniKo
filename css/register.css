@@ -7,8 +7,9 @@ html, body {
 	margin: 0;
 }
 
+	/* Шрифт */
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'Comfortaa', cursive;
 }
 
 	/* Фиксация фона */ 
@@ -39,7 +40,7 @@ body {
 	position: relative;
 	top: 30px;
 	text-align: center;
-	color: #d93604;
+	color: #FF483D;
 	font-size: 30px;
 }
 
@@ -52,16 +53,17 @@ form {
 input {
 	margin: 10px 0px;
 	padding: 10px 5px;
+	font-family:'Comfortaa', cursive;
 	font-size: 25px;
-	color: #d93604;
+	color: #FF483D;
 	background-color: #262626;
 	border: unset;
-	border-bottom: 2px solid #d93604;
+	border-bottom: 2px solid #FF483D;
 	outline: none;
 }
 
 ::placeholder {
-    color: red;
+    color: #FF483D;
     opacity: 1;
 }
 .password {
@@ -72,10 +74,10 @@ input {
 	margin: 10px 0px;
 	padding: 10px 5px;
 	font-size: 25px;
-	color: #d93604;
+	color: #FF483D;
 	background-color: #262626;
 	border: unset;
-	border-bottom: 2px solid #d93604;
+	border-bottom: 2px solid #FF483D;
 	outline: none;
 }
 
@@ -85,33 +87,34 @@ input {
 	margin: 20px 100px 20px 100px;
 	padding: 12px 5px;
 	color: #262626;
-	background-color: #d93604;
+	background-color: #FF483D;
 	text-decoration: none;
 	border-radius: 6px;
 	border: none;
 	font-weight: bolder;
+	font-family:'Comfortaa', cursive;
 	font-size: 25px;
 	transition: 0.2s;
 	cursor: pointer;
-	border: 2px solid #d93604;
+	border: 2px solid #FF483D;
 }
 
 #register:hover {
-	color: #d93604;
+	color: #FF483D;
 	background-color: #262626;
 }
 
 #sinup {
 	text-align: center;
-	color: #d93604;
+	color: #FF483D;
 	font-size: 22px;
 }
 
 .sinup {
 	margin-left: 10px;
 	padding: 3px 8px 3px 8px; 
-	color: #960000;
-	border-bottom: 2px solid #ad0000;
+	color: white;
+	border-bottom: 2px solid #FF483D;
 	text-decoration: none;
 	font-size: 23px;
 	transition: 0.2s;
@@ -119,9 +122,10 @@ input {
 
 .sinup:hover {
 	color: #262626;
+	font-weight: bolder;
 	padding: 3px 8px 3px 8px; 
 	border-radius: 5px;
-	background-color: #ad0000;
+	background-color: #FF483D;
 
 }
 
@@ -130,11 +134,12 @@ input {
 	width: 240px;
 	margin: 10px 0px 0px 0px ;
 	padding: 12px 5px;
-	color: #d93604;
+	color: #FF483D;
 	background-color: #262626;
 	text-decoration: none;
 	border-radius: 6px;
 	border: none;
+	font-family:'Comfortaa', cursive;
 	font-weight: bolder;
 	font-size: 25px;
 	transition: 0.2s;
@@ -143,7 +148,7 @@ input {
 
 #home:hover {
 	color: #262626;
-	background-color: #d93604;
+	background-color: #FF483D;
 }
 
 .messege {
