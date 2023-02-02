@@ -16,13 +16,15 @@
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
 	<link href="css/index.css" rel="stylesheet" >
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 	<title>Главная</title>
 </head>
-<body>
+<body id="body">
 
 	<!-- Фон сайта -->
 
 	<img id="background" src="img/fon-1.png">
+		<div id="blackout"></div>
 
 	<!-- Главное меню -->
 
@@ -58,9 +60,23 @@
 			<ul id="AniKo">
 				<li class="AniKo">
 				 <a class="AniKo-text" href="index.php"> AniKo </a>
+				<li class="search" onclick="viewDiv()">
+				 <img height="25px" width="25px" src="img/search.png">
 			</ul>
 
 		</nav>
+
+		<div id="search-box">
+			<div id="search-content">
+			 <input type="text" name="search"> 		
+			</div>
+
+			<a id="searhc-close" onclick="closeDiv()"> 
+			 <img src="img/close.png" height="45px" width="45px"> 
+			</a>
+
+		</div>
+
 
 	<!-- Контентная часть -->
 	<div id="wrapper">

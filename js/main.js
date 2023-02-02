@@ -12,7 +12,20 @@ function show_hide_password(target){
 	return false;
 }
 
-// Смена темы
+// Поиск
+
+function viewDiv(){
+  document.getElementById("search-box").style.display = "block";
+  document.getElementById("blackout").style.display = "block";
+  document.getElementById("body").style.overflow = "hidden";
+
+};
+
+function closeDiv(){
+  document.getElementById("search-box").style.display = "none";
+  document.getElementById("blackout").style.display = "none";
+  document.getElementById("body").style.overflow = "visible";
+};
 
 
 
