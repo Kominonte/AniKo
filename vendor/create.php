@@ -19,6 +19,6 @@
 		"INSERT INTO `title` (`id`, `title`, `poster`, `status`, `type`, `season`, `year`, `serias`, `genre`, `studio`, `dub`, `timing`, `text`, `link`) 
 		VALUES (NULL, '$title', '$poster', '$status', '$type', '$season', '$year', '$serias', '$genre', '$studio', '$dub', '$timing', '$text', '$link')");
 	
-	header( 'Location: ../catalog.php');
+	header( 'Location: ../title/catalog.php');
 
 ?>

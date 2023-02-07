@@ -1,62 +1,93 @@
-<?php
+	<!-- Ссесия и подключение к БД -->
 
-		session_start();
+<?php 
+    session_start();
 
+		require_once '../vendor/connect.php';
 ?>
+
+	<!-- end -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="../css/profile.css">
-  <link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
- 	<link rel="stylesheet"
-	 href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
+	<link href="../css/profile.css" rel="stylesheet" >
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 	<title>Профиль</title>
 	</div>
 </head>
-<body>
+<body id="body">
 
 	<!-- Фон сайта -->
-	<img class="fon" src="../img/fon-1.png">
 
-	<!-- Главное меню сайта -->
-	<div class="mainmenu">
+	<img id="background" src="../img/fon-1.png">
+		<div id="blackout"></div>
 
-			<!-- Ссылка на главную -->
-			<div id="namelink" >
-			 <a class="namelink" href="../index.php">AniKo</a>
+	<!-- Главное меню -->
+
+		<nav id="mainmenu">
+
+			<ul id="menu">
+				<li class="menu-obj">
+				 <a class="menu-obj-text" href="../title/add-title.php"> Добавить тайтл </a>
+				</li>
+				<li class="menu-obj">
+				 <a class="menu-obj-text" href="../title/catalog.php">  Каталог</a>
+				</li>
+			</ul>
+
+			<ul id="AniKo">
+				<li class="AniKo">
+				 <a class="AniKo-text" href="../index.php"> AniKo </a>
+				<li class="search" onclick="viewDiv()">
+				 <img height="25px" width="25px" src="../img/search.png">
+			</ul>
+
+		</nav>
+
+		<div id="search-box">
+			<div id="search-content">
+			 <input id="input-search" type="text" name="search"> 		
 			</div>
 
-			<!-- Поиск -->
-			<div class="searchbox">
-    	 <input type="text" id="search"  placeholder="Поиск тайтла..."
-    	  title="Type some text">
-   	   <button type="submit"></button>
-    	</div>
+			<a id="searhc-close" onclick="closeDiv()"> 
+			 <img src="../img/close.png" height="45px" width="45px"> 
+			</a>
 
-	</div>
+		</div>
 
-			<!-- Контентная часть -->
-			<div id="wrapper">
+
+	<!-- Контентная часть -->
+	<div id="wrapper">
+
+		<div id="top">
+			<div id=profile>
+				<?= $_SESSION['user']['login'] ?>
 				
-				<div id="top">
-					<div id="avatar-login">
-						<img id="img-avatar" src="../img/noavatar.png">
-						<span id="login"> <?= $_SESSION['user']['login'] ?></span>
-						<a id="exit" href="../vendor/logout.php"> Выйти </a>
-					</div>
-				</div>
+				<a id="logout" href="../vendor/logout.php"> Выйти </a>
 
-				<div id="main">
-				</div>
-					
-				<div id="sidebar">
-				</div>
-			
+
 			</div>
+			
+			<div id=info>
 
+			</div>
+			
+		</div>
 
+		<div id="main">
+			
+		</div>
+					
+		<div id="sidebar">
+		</div>
+
+		</div>
+
+	<script src="../js/main.js"></script>
 </body>
 </html>

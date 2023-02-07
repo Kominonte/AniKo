@@ -96,12 +96,13 @@ body {
 	background: #262626;
 	color: #FF483D;
 }	
+
 	/* Поиск */
 #search-box {
 	width: 800px;
-    left: 50%;
-    border-radius: 10px;
-    margin: -400px 0 0 -400px;
+  left: 50%;
+  border-radius: 10px;
+  margin: -400px 0 0 -400px;
 	margin-top: 70px;
 	display: none;
 	background: #525151;
@@ -154,6 +155,7 @@ input {
 	margin-top: -75px;
 	margin-right: -50px;
 	float: right;
+	cursor: pointer;
 }
 
 	/* Название */

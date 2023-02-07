@@ -87,7 +87,7 @@
 							</a>
 						</div>
 					</div>	
-						<?php
+					<?php
 						}
 					?>	
 				</div>

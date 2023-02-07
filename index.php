@@ -33,7 +33,7 @@
 		<?php if(isset($_SESSION['user'])) : ?>
     		<ul id="profile">
     			<li class="profile">
-    			 <a class="profile-text" href="php/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
+    			 <a class="profile-text" href="profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
     		</ul>
 
