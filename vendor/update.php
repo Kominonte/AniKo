@@ -19,6 +19,6 @@
 	mysqli_query($connect, 
 		"UPDATE `title` SET `title` = '$title', `poster` = '$poster', `status` = '$status', `type` = '$type', `season` = '$season', `year` = '$year', `serias` = '$serias', `genre` = '$genre', `studio` = '$studio', `dub` = '$dub', `timing` = '$timing', `text` = '$text', `link` = '$link' WHERE `title`.`id` = $id");
 	
-	header( 'Location: ../catalog.php');
+	header( 'Location: ../title/catalog.php');
 
 ?>

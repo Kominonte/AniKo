@@ -3,7 +3,7 @@
 <?php 
     session_start();
 
-		require_once '../vendor/connect.php';
+	require_once '../vendor/connect.php';
 ?>
 
 	<!-- end -->
@@ -56,11 +56,9 @@
 			</a>
 
 		</div>
-
     		<ul id="profile">
     			<li class="profile">
-    			 <a class="profile-text" href="../profile/profile.php">
-    			  <?= $_SESSION['user']['login'] ?> </a>
+    			 <a class="profile-text" href="profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
     		</ul>
 
@@ -70,24 +68,30 @@
 		<div id="main">
 
 			<form class="add-title" action="../vendor/create.php" method="post">
-			<div id="add">
-					<p class="ins"> Тайтл (название аниме) </p>
+			<div id="left">
+					<p class="ins"> Тайтл </p>
 						<input class="input" type="text" name="title">
-					<p class="ins"> Постер (ссылка на постер аниме, можно перетащить на поле) </p>
-						<input class="input" type="text" name="poster">
-					<p class="ins"> Статус (выходит/вышел/онгоинг/анонс)</p>
-						<input class="input" type="text" name="status">
-					<p class="ins"> Тип (фильм/сериал/OVA)</p>
-						<input class="input" type="text" name="type">
-					<p class="ins"> Сезон (зима/весна/лето/осень)</p>
-						<input class="input" type="text" name="season" list="season">	
-							<datalist id="season">
-								<option value="Зима"></option>
-								<option value="Весна"></option>
-								<option value="Лето"></option>
-								<option value="Осень"></option>
-							</datalist>
-					<p class="ins"> Год (дата выхода)</p>
+					<p class="ins"> Статус </p>
+						<select  class="input" type="text" name="status" list="status">
+							<option value="Выходит">Выходит</option>
+							<option value="Вышел">Вышел</option>
+							<option value="Онгоинг">Онгоинг</option>
+							<option value="Анонс">Анонс</option>
+						</select>
+					<p class="ins"> Тип </p>
+						<select class="input" type="text" name="type" list="type">
+							<option value="Фильм">Фильм</option>
+							<option value="Сериал">Сериал</option>
+							<option value="OVA">OVA</option>
+						</select>
+					<p class="ins"> Сезон</p>	
+						<select class="input" type="text" name="season" list="season">
+							<option value="Зима">Зима</option>
+							<option value="Весна">Весна</option>
+							<option value="Лето">Лето</option>
+							<option value="Осень">Осень</option>
+						</select>
+					<p class="ins"> Год </p>
 						<input class="input" type="number" name="year">
 					<p class="ins"> Серий (количество серий)</p>
 						<input class="input" type="text" name="serias">
@@ -99,13 +103,15 @@
 						<input class="input" type="text" name="dub">
 					<p class="ins"> Тайминг </p>
 						<input class="input" type="text" name="timing">
-					<p class="ins"> Ссылка на плеер </p>
-						<input class="input" type="text" name="link">
 			</div>
 			
-			<div>
+			<div id="right">
 					<p class="ins"> Описание </p>
 						<textarea class="textarea" type="text" name="text"></textarea>
+					<p class="link"> Постер (ссылка на постер аниме, можно перетащить на поле) </p>
+						<input class="input" type="text" name="poster">
+					<p class="link"> Ссылка на плеер </p>
+						<input class="input" type="text" name="link">
 			</div>
 
 				<button id="add-title-btn" type="submit"> Добавить тайтл </button>

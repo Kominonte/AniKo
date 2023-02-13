@@ -35,6 +35,9 @@
     			<li class="profile">
     			 <a class="profile-text" href="profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
+    			<li class="menu-obj">
+				 <a class="menu-obj-text" href="title/add-title.php"> Добавить тайтл </a>
+				</li>
     		</ul>
 
 		<? else : ?>
@@ -49,9 +52,6 @@
 
 		<?php endif; ?>
 			<ul id="menu">
-				<li class="menu-obj">
-				 <a class="menu-obj-text" href="title/add-title.php"> Добавить тайтл </a>
-				</li>
 				<li class="menu-obj">
 				 <a class="menu-obj-text" href="title/catalog.php">  Каталог</a>
 				</li>

@@ -1,97 +1,108 @@
+	<!-- Ссесия и подключение к БД -->
+
 <?php 
     session_start();
 
 	require_once '../vendor/connect.php';
 ?>
 
+	<!-- end -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width">
-  	<link rel="stylesheet" href="../css/catalog.css">
-  	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
-  	<link rel="stylesheet"
-	 href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<title>AniKo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
+	<link href="../css/catalog.css" rel="stylesheet" >
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<title>Главная</title>
 </head>
-<body>
+<body id="body">
 
 	<!-- Фон сайта -->
-	<img class="fon" src="../img/fon-1.png">
 
-	<!-- Главное меню сайта -->
-	<div class="mainmenu">
+	<img id="background" src="../img/fon-1.png">
+		<div id="blackout"></div>
 
-			<!-- Ссылка на главную -->
-			<div class="namelink" >
-			 <a id="namelink" href="../index.php">AniKo</a>
+	<!-- Главное меню -->
+
+		<nav id="mainmenu">
+
+		<?php if(isset($_SESSION['user'])) : ?>
+    		<ul id="profile">
+    			<li class="profile">
+    			 <a class="profile-text" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
+    			</li>
+    			<li class="menu-obj">
+				 <a class="menu-obj-text" href="../title/add-title.php"> Добавить тайтл </a>
+				</li>
+    		</ul>
+
+		<? else : ?>
+			<ul id="profile">
+				<li class="profile">
+				 <a class="profile-text" href="../php/login.php"> Войти </a>
+				</li>
+				<li class="profile">
+				 <a class="profile-text" href="../php/register.php"> Регистарация </a>
+				</li>
+			</ul>
+
+		<?php endif; ?>
+			<ul id="menu">
+				<li class="menu-obj">
+				 <a class="menu-obj-text" href="../title/catalog.php">  Каталог</a>
+				</li>
+			</ul>
+
+			<ul id="AniKo">
+				<li class="AniKo">
+				 <a class="AniKo-text" href="../index.php"> AniKo </a>
+				<li class="search" onclick="viewDiv()">
+				 <img height="25px" width="25px" src="../img/search.png">
+			</ul>
+
+		</nav>
+
+		<div id="search-box">
+			<div id="search-content">
+			 <input type="text" name="search"> 		
 			</div>
 
-			<!-- Поиск -->
-			<div class="searchbox">
-    	 	 <input type="text" id="search"  placeholder="Поиск тайтла..."
-    	  	  title="Type some text">
-   	   		 <button type="submit"></button>
-    		</div>
+			<a id="searhc-close" onclick="closeDiv()"> 
+			 <img src="../img/close.png" height="45px" width="45px"> 
+			</a>
 
-    	<?php if(isset($_SESSION['user'])) : ?>
-    		<div class="user"> 
-    			<a id="user" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
-    		</div>
+		</div>
 
-	    <? else : ?>
-	    	<div class="user"> 
-	    		<a id="user" href="../login.php"> Регистрация / Вход </a>
-	    	</div>
-	    <?php endif; ?>
 
-	    	<div class="add-title">
-    			<a id="add-title" href="../title/add-title.php"> Добавить тайтл </a>
-    		</div>
+	<!-- Контентная часть -->
+	<div id="wrapper">
 
-    		<div class="catalog">
-    			<a id="catalog" href="../title/catalog.php"> Каталог </a>
-    		</div>
+		<div id="main">
 
-    </div>
+			<div class="content">
+				<?php
+				$title = mysqli_query($connect, "SELECT * FROM `title`");
+				$title = mysqli_fetch_all($title);
 
-			<!-- Контентная часть -->
-			<div id="wrapper">
-
-				<div id="main">
-					<?php
-						$title = mysqli_query($connect, "SELECT * FROM `title`");
-						$title = mysqli_fetch_all($title);
-						/*print_r($title);*/
-						foreach ($title as $title) {
-							?>
-
-					<div class="content">
-						
-
-						<a href="title.php?id=<?= $title[0]?>"> 
-							 <img  class="poster" src="<?= $title[2]?>">
-						</a>  
-
-						<div>
-							<a class="btn"  href="../title/title.php?id=<?= $title[0]?>"> 
-							 Просмотреть 
-							</a>
-						</div>
-
-						<div>
-							<a class="btn"  href="../title/update.php?id=<?= $title[0]?>"> 
-							 Изменить 
-							</a>
-						</div>
-					</div>	
-					<?php
-						}
-					?>	
-				</div>
+				foreach ($title as $title) {
+			?>		
+				<a class="item" href="../title/title.php?id=<?= $title[0]?>"> 
+					<img  class="poster" src="<?= $title[2]?>">
+				</a> 
+			<?php
+				}
+			?>	
 			</div>
+		</div>
+					
+		<div id="sidebar">
+		</div>
+	</div>
 
+	<script src="../js/main.js"></script>
 </body>
 </html>
