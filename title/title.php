@@ -123,28 +123,63 @@
 					
 				<div id="sidebar">
 					<img id="poster" src="<?= $title['poster']?>">
+
 					<h3 id="title"> <?= $title['title']?> </h3>
 
-					<div class="des">
-						<p> Статус </p>
-							<td> <?= $title['status']?> </td>
-						<p> Тип </p>
-							<td> <?= $title['type']?> </td>
-						<p> Сезон </p>
-							<td> <?= $title['season']?> </td>
-						<p> Год </p>
-							<td> <?= $title['year']?> </td>
-						<p> Серий </p>
-							<td> <?= $title['serias']?> </td>
-						<p> Жанры </p>
-							<td> <?= $title['genre']?> </td>
-						<p> Студия </p>
-							<td> <?= $title['studio']?> </td>
-						<p> Озвучили </p>
-							<td> <?= $title['dub']?> </td>
-						<p> Тайминг </p>
-							<td> <?= $title['timing']?> </td>
+					<div class="des-box">
+
+						<div class="des">
+							<p class="left"> Статус </p>
+							<p class="right"> <?= $title['status']?> </p>	
+						</div>
+
+						<div class="des">
+							<p class="left"> Тип </p>
+							<p class="right"> <?= $title['type']?> </p>
+						</div>
+
+						<div class="des">
+							<p class="left"> Сезон </p>
+							<p class="right"> <?= $title['season']?> </p>	
+						</div>
+
+						<div class="des">
+							<p class="left"> Год </p>
+							<p class="right"> <?= $title['year']?> </p>
+						</div>	
+
+						<div class="des">
+							<p class="left"> Серий </p>
+							<p class="right"> <?= $title['serias']?> </p>	
+						</div>
+
+						<div class="des">
+							<p class="big-des-l"> Жанры </p>
+							<p class="big-des"> <?= $title['genre']?> </p>
+						</div>
+
+						<div class="des">	
+							<p class="left"> Студия </p>
+							<p class="right"> <?= $title['studio']?> </p>
+						</div>
+
+						<div class="des">
+							<p class="big-des-l"> Озвучили </p>
+							<p class="big-des"> <?= $title['dub']?> </p>
+						</div>
+
+						<div class="des">
+							<p class="big-des-l"> Тайминг </p>
+							<p class="big-des"> <?= $title['timing']?> </p>	
+						</div>
 					</div>
+
+					<div id="div-btn-update">
+						<a id="btn-update"  href="update.php?id=<?= $title_id?>"> 
+						 Изменить тайтл
+						</a>
+					</div>
+
 				</div>
 
 				</div>
