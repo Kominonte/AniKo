@@ -7,6 +7,6 @@
 
 	mysqli_query($connect, "INSERT INTO `comment` (`id`, `title_id`, `body`) VALUES (NULL, '$id', '$body')");
 
-	header( 'Location: ../title.php?id=' . $id);	
+	header( 'Location: ../title/title.php?id=' . $id);	
 
 ?>

@@ -11,94 +11,113 @@
 	$comment = mysqli_fetch_all($comment);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width">
-  	<link rel="stylesheet" href="../css/title.css">
-  	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
-  	<link rel="stylesheet"
-	 href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<title>AniKo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
+	<link href="../css/title.css" rel="stylesheet" >
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<title><?= $title['title']?></title>
 </head>
-<body>
+<body id="body">
 
 	<!-- Фон сайта -->
-	<img class="fon" src="../img/fon-1.png">
 
-	<!-- Главное меню сайта -->
-	<div class="mainmenu">
+	<img id="background" src="../img/fon-1.png">
+		<div id="blackout"></div>
 
-			<!-- Ссылка на главную -->
-			<div class="namelink" >
-			 <a id="namelink" href="../index.php">AniKo</a>
+	<!-- Главное меню -->
+
+		<nav id="mainmenu">
+
+		<?php if(isset($_SESSION['user'])) : ?>
+    		<ul id="profile">
+    			<li class="profile">
+    			 <a class="profile-text" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
+    			</li>
+    			<li class="menu-obj">
+				 <a class="menu-obj-text" href="../title/add-title.php"> Добавить тайтл </a>
+				</li>
+    		</ul>
+
+		<? else : ?>
+			<ul id="profile">
+				<li class="profile">
+				 <a class="profile-text" href="../php/login.php"> Войти </a>
+				</li>
+				<li class="profile">
+				 <a class="profile-text" href="../php/register.php"> Регистарация </a>
+				</li>
+			</ul>
+
+		<?php endif; ?>
+			<ul id="menu">
+				<li class="menu-obj">
+				 <a class="menu-obj-text" href="../title/catalog.php">  Каталог</a>
+				</li>
+			</ul>
+
+			<ul id="AniKo">
+				<li class="AniKo">
+				 <a class="AniKo-text" href="../index.php"> AniKo </a>
+				<li class="search" onclick="viewDiv()">
+				 <img height="25px" width="25px" src="../img/search.png">
+			</ul>
+
+		</nav>
+
+		<div id="search-box">
+			<div id="search-content">
+			 <input type="text" name="search"> 		
 			</div>
 
-			<!-- Поиск -->
-			<div class="searchbox">
-    	 	 <input type="text" id="search"  placeholder="Поиск тайтла..."
-    	  	  title="Type some text">
-   	   		 <button type="submit"></button>
-    		</div>
+			<a id="searhc-close" onclick="closeDiv()"> 
+			 <img src="../img/close.png" height="45px" width="45px"> 
+			</a>
 
-    	<?php if(isset($_SESSION['user'])) : ?>
-    		<div class="user"> 
-    			<a id="user" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
-    		</div>
+		</div>
 
-	    <? else : ?>
-	    	<div class="user"> 
-	    		<a id="user" href="../login.php"> Регистрация / Вход </a>
-	    	</div>
-	    <?php endif; ?>
 
-	    	<div class="add-title">
-    			<a id="add-title" href="add-title.php"> Добавить тайтл </a>
-    		</div>
-
-    		<div class="catalog">
-    			<a id="catalog" href="catalog.php"> Каталог </a>
-    		</div>
-
-    </div>
-
-			<!-- Контентная часть -->
+	<!-- Контентная часть -->
 			<div id="wrapper">
 
 				<div id="main">
 
-					<div id="description">
-						<h2> Описание </h2>
+					<button class="collapsible"> Описание </button>
+					<div class="description">
 						<p> <?= $title['text']?> </p>
 					</div>
 
 					<iframe id="player" src="<?= $title['link']?>" type="text/html" width=840 height=515 frameborder="0" allowfullscreen></iframe>
 
-					<div id="com-fon">
+					
 						
 						<h2 id="h-com"> Коментарии </h2>
-							<hr color ="red">
-						<form action="vendor/add-comment.php" method="post">
+						
+					<div id="com-box">
+						<form action="../vendor/add-comment.php" method="post">
 							<input type="hidden" name="id" value="<?= $title['id'] ?>">
-							<textarea 
+							<textarea rows="1"
 							id="add-com-text" name="body" placeholder="Коментарий...">
 							</textarea>
-							<button id="add-com-btn" type="submit"> Оставить коментарий</button>
+							<button id="add-com-btn" type="submit">Оставить коментарий</button>
 						</form>
 
-							<hr color ="red">
-
-						<ul id="comment">
+					<div  id="comment">
+						<ul>
 							<?php
 								foreach ($comment as $comment) {
 								?>
-									<li> <?= $comment[2] ?></li>
+									<li id="com-list"> <?= $comment[2] ?></li>
 								<?php
 								}
 							?>
 						</ul>
+					</div>
+
 					</div>
 				</div>
 					
@@ -129,6 +148,6 @@
 				</div>
 
 				</div>
-
+	<script src="../js/main.js"></script>
 </body>
 </html>
