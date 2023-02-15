@@ -36,7 +36,7 @@
     			 <a class="profile-text" href="profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
     			<li class="menu-obj">
-				 <a class="menu-obj-text" href="title/add-title.php"> Добавить тайтл </a>
+				 <a class="menu-obj-text" href="php/add.php"> Добавить </a>
 				</li>
     		</ul>
 
