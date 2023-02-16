@@ -69,23 +69,26 @@
 		<div id="main">
 
 			<div class="content">
+			<div class="content-d">
 				<p class="content-p"> Форма добавления аниме </p>
 				<a class="content-btn" href="../title/add-title.php"> Добавить тайтл </a>
 			</div>
 
-			<div class="content">
+			<div class="content-d">
 				<p class="content-p"> Форма добавления дабера </p>
-				<a class="content-btn" href="../title/add-dabber.php"> Добавить дабера </a>
+				<a class="content-btn" href="add-dub.php"> Добавить дабера </a>
 			</div>
 
-			<div class="content">
-				<p class="content-p"> Форма добавления аниме </p>
-				<a class="content-btn" href="../title/add-timer.php"> Добавить таймера </a>
+			<div class="content-d">
+				<p class="content-p"> Форма добавления таймера </p>
+				<a class="content-btn" href="../php/add-timer.php"> Добавить таймера </a>
 			</div>
 
-			<div class="content">
-				<p class="content-p"> Форма добавления аниме </p>
-				<a class="content-btn" href="#"> Добавить переводчика (в разаботке) </a>
+			<div class="content-d">
+				<p class="content-p"> Форма добавления переводчика </p>
+				<a class="content-btn" href="#"> Добавить переводчика </a>
+			</div>
+
 			</div>
 
 		</div>
