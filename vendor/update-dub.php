@@ -1,6 +1,7 @@
 <?php
 	require_once 'connect.php';
 
+	$id = $_POST['id'];
 	$dubber = $_POST['dubber'];
 	$name = $_POST['name'];
 	$on_project = $_POST['on_project'];
@@ -14,7 +15,7 @@
 
 
 	mysqli_query($connect, 
-		"INSERT INTO `dubber` (`id`, `avatar`, `dubber`, `name`, `on_project`, `telegram`, `youtube`, `description`, `quote`) VALUES (NULL, '$avatar', '$dubber', '$name', '$on_project', '$telegram', '$youtube', '$info', '$quote')");
+		"UPDATE `dubber` SET `avatar`='$avatar',`dubber`='$dubber',`name`='$name',`on_project`='$on_project',`telegram`='$telegram',`youtube`='$info',`description`='$info',`quote`='$quote' WHERE `dubber`.`id` = $id");
 
 
 	

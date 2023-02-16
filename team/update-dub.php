@@ -58,7 +58,7 @@
 		</div>
     		<ul id="profile">
     			<li class="profile">
-    			 <a class="profile-text" href="profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
+    			 <a class="profile-text" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
     		</ul>
 
@@ -67,35 +67,65 @@
 
 		<div id="main">
 
-			<form class="add-dub" action="../vendor/create-dub.php" method="post">
+			<?php
+					$dubber = mysqli_query($connect, "SELECT * FROM `dubber`");
+					$dubber = mysqli_fetch_all($dubber);
+
+					foreach ($dubber as $dubber) {
+						?>
+
+					<?php
+					}
+				?>
+
+				<?php
+					$dubber_id = $_GET['id'];
+					$dubber = mysqli_query($connect, "SELECT * FROM `dubber` WHERE id = '$dubber_id'");
+					$dubber = mysqli_fetch_assoc($dubber);
+				?>	
+
+			<form class="add-dub" action="../vendor/update-dub.php" method="post"
+			 enctype="multipart/form-data">
+			
 			<div id="left">
+						<input type="hidden" name="id" 
+							value="<?= $dubber['id'] ?>">
+					<p class="ins"> Аватар </p>
+						<input class="input" type="file" name="avatar" 
+						value="<?= $dubber['avatar'] ?>">
+
 					<p class="ins"> Даббер </p>
-						<input class="input" type="text" name="dubber">
+						<input class="input" type="text" name="dubber" 
+						value="<?= $dubber['dubber'] ?>">
 
 					<p class="ins"> Имя </p>
-						<input class="input" type="text" name="name">	
+						<input class="input" type="text" name="name" 
+						value="<?= $dubber['name'] ?>">	
 
 					<p class="ins"> На проекте </p>
-						<input class="input" type="text" name="on_project">	
+						<input class="input" type="text" name="on_project" 
+						value="<?= $dubber['on_project'] ?>">	
 
 					<p class="ins"> Telegram </p>	
-						<input class="input" type="text" name="telegram">
+						<input class="input" type="text" name="telegram" 
+						value="<?= $dubber['telegram'] ?>">
 
 					<p class="ins"> YouTube </p>
-						<input class="input" type="text" name="youtube">
+						<input class="input" type="text" name="youtube" 
+						value="<?= $dubber['youtube'] ?>">
 			</div>
 			
 			<div id="right">
 
 					<p class="des"> Информация </p>
-						<textarea class="textarea" type="text" name="info"></textarea>
+						<textarea class="textarea" type="text" name="info"><?= $dubber['info'] ?></textarea>
 
 					<p class="des"> Цитата </p>
-						<textarea class="textarea" type="text" name="quote"></textarea>
+						<textarea class="textarea" type="text" name="quote" ><?= $dubber['quote'] ?></textarea>
 
 			</div>
 
-				<button id="add-dub-btn" type="submit"> Добавить даббера </button>
+				<button id="add-dub-btn" type="submit"> Обновить инфу </button>
 			</form>
 			
 	</div>

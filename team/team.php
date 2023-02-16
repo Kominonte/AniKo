@@ -15,9 +15,9 @@
 	<meta name="viewport" content="width=device-width">
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
-	<link href="../css/add.css" rel="stylesheet" >
+	<link href="../css/team.css" rel="stylesheet" >
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-	<title>Добавление</title>
+	<title>Команда Анилибрии</title>
 </head>
 <body id="body">
 
@@ -30,15 +30,30 @@
 
 		<nav id="mainmenu">
 
+		<?php if(isset($_SESSION['user'])) : ?>
     		<ul id="profile">
     			<li class="profile">
     			 <a class="profile-text" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
+    			<li class="menu-obj">
+				 <a class="menu-obj-text" href="../title/add-title.php"> Добавить </a>
+				</li>
     		</ul>
 
+		<? else : ?>
+			<ul id="profile">
+				<li class="profile">
+				 <a class="profile-text" href="../php/login.php"> Войти </a>
+				</li>
+				<li class="profile">
+				 <a class="profile-text" href="../php/register.php"> Регистарация </a>
+				</li>
+			</ul>
+
+		<?php endif; ?>
 			<ul id="menu">
 				<li class="menu-obj">
-				 <a class="menu-obj-text" href="../title/catalog.php">  Каталог</a>
+				 <a class="menu-obj-text" href="../title/catalog.php">  Каталог </a>
 				</li>
 			</ul>
 
@@ -69,33 +84,27 @@
 		<div id="main">
 
 			<div class="content">
-			<div class="content-d">
-				<p class="content-p"> Форма добавления аниме </p>
-				<a class="content-btn" href="../title/add-title.php"> Добавить тайтл </a>
-			</div>
+				<?php
+				$dubber = mysqli_query($connect, "SELECT * FROM `dubber`");
+				$dubber = mysqli_fetch_all($dubber);
 
-			<div class="content-d">
-				<p class="content-p"> Форма добавления дабера </p>
-				<a class="content-btn" href="../team/add-dub.php"> Добавить дабера </a>
+				foreach ($dubber as $dubber) {
+			?>		
+				<a class="item" href="../team/dubber.php?id=<?= $dubber[0]?>"> 
+					<img  class="avatar" src="<?= $dubber[1]?>">
+				</a> 
+				<a class="dub-link" href="../team/dubber.php?id=<?= $dubber[0]?>"><?= $dubber[2]?></a>
+			<?php
+				}
+			?>	
+			
 			</div>
-
-			<div class="content-d">
-				<p class="content-p"> Форма добавления таймера </p>
-				<a class="content-btn" href="../php/add-timer.php"> Добавить таймера </a>
-			</div>
-
-			<div class="content-d">
-				<p class="content-p"> Форма добавления переводчика </p>
-				<a class="content-btn" href="#"> Добавить переводчика </a>
-			</div>
-
-			</div>
-
 		</div>
 					
+		<div id="sidebar">
 		</div>
+	</div>
 
 	<script src="../js/main.js"></script>
 </body>
 </html>
-

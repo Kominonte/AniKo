@@ -36,7 +36,7 @@
     			 <a class="profile-text" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
     			<li class="menu-obj">
-				 <a class="menu-obj-text" href="../title/add-title.php"> Добавить тайтл </a>
+				 <a class="menu-obj-text" href="../title/add-title.php"> Добавить </a>
 				</li>
     		</ul>
 
@@ -53,7 +53,7 @@
 		<?php endif; ?>
 			<ul id="menu">
 				<li class="menu-obj">
-				 <a class="menu-obj-text" href="../title/catalog.php">  Каталог</a>
+				 <a class="menu-obj-text" href="../team/team.php">  AniL team </a>
 				</li>
 			</ul>
 
@@ -87,7 +87,7 @@
 				<?php
 				$title = mysqli_query($connect, "SELECT * FROM `title`");
 				$title = mysqli_fetch_all($title);
-
+				
 				foreach ($title as $title) {
 			?>		
 				<a class="item" href="../title/title.php?id=<?= $title[0]?>"> 
