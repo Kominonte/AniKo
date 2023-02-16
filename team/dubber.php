@@ -8,10 +8,6 @@
 	$dubber_id = $_GET['id'];
 	$dubber = mysqli_query($connect, "SELECT * FROM `dubber` WHERE id = '$dubber_id'");
 	$dubber = mysqli_fetch_assoc($dubber);
-
-	$comment = mysqli_query($connect, 
-		"SELECT * FROM `comment` WHERE dubber_id = '$dubber_id' ");
-	$comment = mysqli_fetch_all($comment);
 ?>
 
 	<!-- end -->

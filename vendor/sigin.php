@@ -30,7 +30,7 @@
 
 	} else {
 		$_SESSION['message'] = 'Неверный логин или пароль';
-		header('Location: ../auth.php');	
+		header('Location: ../php/login.php');	
 	}
 
 	if (trim($email === '')) {

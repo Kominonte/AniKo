@@ -36,7 +36,7 @@
     			 <a class="profile-text" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
     			<li class="menu-obj">
-				 <a class="menu-obj-text" href="../title/add-title.php"> Добавить </a>
+				 <a class="menu-obj-text" href="../php/add.php"> Добавить </a>
 				</li>
     		</ul>
 
@@ -82,23 +82,26 @@
 	<div id="wrapper">
 
 		<div id="main">
-
-			<div class="content">
-				<?php
+			
+			<?php
 				$dubber = mysqli_query($connect, "SELECT * FROM `dubber`");
 				$dubber = mysqli_fetch_all($dubber);
 
 				foreach ($dubber as $dubber) {
 			?>		
+
+			<div class="content">
 				<a class="item" href="../team/dubber.php?id=<?= $dubber[0]?>"> 
 					<img  class="avatar" src="<?= $dubber[1]?>">
 				</a> 
-				<a class="dub-link" href="../team/dubber.php?id=<?= $dubber[0]?>"><?= $dubber[2]?></a>
+
+				<a class="dub-link" href="../team/dubber.php?id=<?= $dubber[0]?>"><?= $dubber[2]?></a>			
+			</div>
 			<?php
 				}
 			?>	
 			
-			</div>
+			
 		</div>
 					
 		<div id="sidebar">

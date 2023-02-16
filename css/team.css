@@ -195,30 +195,39 @@ input {
 }
 
 .content {
-	margin: 10px 10px 10px 10px;;
-	
+	width: 140px;
+	margin: 10px 10px 10px 10px;
+	padding: 5px;
+	background-color: #262626;
+	border-radius: 	5px;
+	transition: 0.2s;
+	float: left;
+}
+
+.content:hover {
+	margin: 0px 10px 10px 10px;
+	box-shadow: 0px 0px 10px 2px #FF483D;
 }
 
 .avatar {
 	margin: 0px 10px 10px 0px;
 	width: 140px;
 	border-radius: 7px;
-	float: left;
-	transition: .2s;
 }	
 
-.avatar:hover {
-	box-shadow: 0px 0px 10px 0px white;
+.content-a {
+
 }
 
-.content:hover > :not(:hover) {
-	transition: .2s;
-	filter: grayscale(80%);
+.content-d {
 }
 
 .dub-link {
-	color: white;
-	text-decoration: none;
+	display: block;
+	font-size: 20px;
+	text-align: center;
+	color: #FF483D;
+	text-decoration: none;		
 }
 
 	/* sidebar */
