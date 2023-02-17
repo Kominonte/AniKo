@@ -87,6 +87,8 @@
 				<?php
 				$title = mysqli_query($connect, "SELECT * FROM `title`");
 				$title = mysqli_fetch_all($title);
+
+				
 				
 				foreach ($title as $title) {
 			?>		

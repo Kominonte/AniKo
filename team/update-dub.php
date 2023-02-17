@@ -90,6 +90,7 @@
 			<div id="left">
 						<input type="hidden" name="id" 
 							value="<?= $dubber['id'] ?>">
+
 					<p class="ins"> Аватар </p>
 						<input class="input" type="file" name="avatar" 
 						value="<?= $dubber['avatar'] ?>">
@@ -118,7 +119,7 @@
 			<div id="right">
 
 					<p class="des"> Информация </p>
-						<textarea class="textarea" type="text" name="info"><?= $dubber['info'] ?></textarea>
+						<textarea class="textarea" type="text" name="info"><?= $dubber['description'] ?></textarea>
 
 					<p class="des"> Цитата </p>
 						<textarea class="textarea" type="text" name="quote" ><?= $dubber['quote'] ?></textarea>

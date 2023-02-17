@@ -2,7 +2,6 @@
 
 <?php 
     session_start();
-
 	require_once 'vendor/connect.php';
 ?>
 
@@ -73,17 +72,28 @@
 		</nav>
 
 		<div id="search-box">
+		<form method="post">
 			<div id="search-content">
-			 <input type="text" name="search"> 		
+			 <input type="text" name="search"> 
+			 <input type="submit" name="submit" value="поиск">		
 			</div>
 
 			<a id="searhc-close" onclick="closeDiv()"> 
 			 <img src="img/close.png" height="45px" width="45px"> 
 			</a>
 
+		<?php 
+			if(isset($_POST['submit'])){
+				$search = $_POST['search'];
+				$query = mysqli_query($connect, 
+					"SELECT * FROM `title` WHERE `title` LIKE '%$search%' OR `id`");
+				while($row = mysqli_fetch_assoc($query))
+				 echo "<h1>".$row['id']."</h1>".$row['title'];		
+				}			 	
+			?>	
+	
+		</form> 
 		</div>
-
-
 	<!-- Контентная часть -->
 	<div id="wrapper">
 

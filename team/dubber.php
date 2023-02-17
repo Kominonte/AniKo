@@ -92,32 +92,56 @@
 	<div id="wrapper">
 
 		<div id="main">
-			<div>
+			
+			<div class="content-top"> 
 
-			<img src="<?= $dubber['avatar'] ?>"></div>
-
-			<p class="info"> <?= $dubber['dubber'] ?></p>
-
-			<p class="info"> <?= $dubber['name'] ?></p>
-
-			<p class="info"> <?= $dubber['on_project'] ?></p>
-
-			<p class="info"> <?= $dubber['telegram'] ?></p>
-
-			<p class="info"> <?= $dubber['youtube'] ?></p>
-
-			<p class="info"> <?= $dubber['info'] ?></p>
-
-			<p class="info"> <?= $dubber['quote'] ?></p>
-
-			</div>
-
-			<div id="div-btn-update">
+				
+			<div class="content-i">
+				<p class="dubber"> <?= $dubber['dubber'] ?></p>
+				<p class="info"> Имя: <?= $dubber['name'] ?></p>
+				<p class="info"> На проекте c <?= $dubber['on_project'] ?></p>
+				
 				<a id="btn-update"  href="../team/update-dub.php?id=<?= $dubber_id?>"> 
 				 Изменить инфу
 				</a>
 			</div>
 
+			<div class="content-a">
+
+				<img class="avatar" src="<?= $dubber['avatar'] ?>">
+
+			</div>
+
+				
+			</div>
+
+			<div class="content-link">
+				<div class="div-dub-link">
+				<a class="telegram-link" href="<?= $dubber['telegram'] ?>" 
+					target="_blank">Telegram</a>
+					<img class="telegram-link-img" src="../img/telegram.png">
+				</div>
+
+				<div class=div-dub-link>
+				<a class="youtube-link" href="<?= $dubber['youtube'] ?>" 
+					target="_blank">Youtube</a>
+					<img class="youtube-link-img" src="../img/youtube.png">
+				</div>
+			</div>
+
+			<div class="content-mid">
+
+				<div class="content-mid-l">
+					<p class="info"> Информация </p>
+					<p class="info"> <?= $dubber['description'] ?></p>
+				</div>
+
+				<div class="content-mid-r">
+					<p class="info"> Цитата </p>
+					<p class="info"> <?= $dubber['quote'] ?></p>
+				</div>
+
+			</div>
 		</div>
 					
 		<div id="sidebar">
