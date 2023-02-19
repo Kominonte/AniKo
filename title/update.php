@@ -131,5 +131,35 @@
 
 		</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+
+				$("#live-search").keyup(function(){
+					var input = $ (this).val();
+					if(input != ""){
+						$.ajax({
+
+							url:"vendor/search.php",
+							method:"POST",
+							data:{input:input},
+
+							success:function(data){
+								$("#searchresult").html(data);
+								$("#searchresult").css("display","block");
+							}
+						});
+					}else{
+
+						$("#searchresult").css("display","none");
+					}
+				});
+
+		});
+
+	</script>
+
 </body>
 </html>

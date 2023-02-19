@@ -15,7 +15,7 @@
 
 
 	mysqli_query($connect, 
-		"UPDATE `dubber` SET `avatar`='$avatar',`dubber`='$dubber',`name`='$name',`on_project`='$on_project',`telegram`='$telegram',`youtube`='$youtube',`description`='$info',`quote`='$quote' WHERE `dubber`.`id` = $id");
+		"UPDATE `dubber` SET `avatar`='$avatar',`dubber`='$dubber',`name`='$name',`on_project`='$on_project',`telegram`='$telegram',`youtube`='$youtube',`info`='$info',`quote`='$quote' WHERE `dubber`.`id` = $id");
 
 
 	

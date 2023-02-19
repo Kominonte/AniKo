@@ -47,20 +47,26 @@
 		</nav>
 
 		<div id="search-box">
+		<form method="post">
 			<div id="search-content">
-			 <input id="input-search" type="text" name="search"> 		
+			 <input type="text" name="search" id="live-search" placeholder="Найти тайтл" autocomplete="off">  	
 			</div>
 
 			<a id="searhc-close" onclick="closeDiv()"> 
 			 <img src="../img/close.png" height="45px" width="45px"> 
 			</a>
 
+			<div id="searchresult"></div>
+	
+		</form>
 		</div>
+
     		<ul id="profile">
     			<li class="profile">
     			 <a class="profile-text" href="../profile/profile.php"> <?= $_SESSION['user']['login'] ?> </a>
     			</li>
     		</ul>
+
 
 	<!-- Контентная часть -->
 	<div id="wrapper">
@@ -119,7 +125,7 @@
 			<div id="right">
 
 					<p class="des"> Информация </p>
-						<textarea class="textarea" type="text" name="info"><?= $dubber['description'] ?></textarea>
+						<textarea class="textarea" type="text" name="info"><?= $dubber['info'] ?></textarea>
 
 					<p class="des"> Цитата </p>
 						<textarea class="textarea" type="text" name="quote" ><?= $dubber['quote'] ?></textarea>
@@ -132,5 +138,35 @@
 	</div>
 
 	<script src="../js/main.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+
+				$("#live-search").keyup(function(){
+					var input = $ (this).val();
+					if(input != ""){
+						$.ajax({
+
+							url:"/vendor/search.php",
+							method:"POST",
+							data:{input:input},
+
+							success:function(data){
+								$("#searchresult").html(data);
+								$("#searchresult").css("display","block");
+							}
+						});
+					}else{
+
+						$("#searchresult").css("display","none");
+					}
+				});
+
+		});
+
+	</script>
 </body>
 </html>

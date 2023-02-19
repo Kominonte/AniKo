@@ -1,0 +1,91 @@
+	/* Поиск */
+#search-box {
+	width: 800px;
+  left: 50%;
+  border-radius: 10px;
+  margin: -400px 0 0 -400px;
+	margin-top: 70px;
+	display: none;
+	background: #3d3d3d;
+	position: absolute;
+	position: fixed;
+	z-index: 1; 
+	animation-name: open;
+	animation-duration: 0.3s;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+
+  }
+}
+
+#search-content {
+	margin: 10px;
+}
+
+input {
+	width: 780px;
+	padding: 10px;
+	font-size: 20px;
+	font-family:'Comfortaa', cursive;
+	color: white;
+	background-color:  #525151;
+	border: unset;
+	border-radius: 5px;
+	outline: none;
+}
+ 
+.search {
+	margin: 5px 5px 0px 15px;
+	padding: 10px 10px 6px 10px;;
+	background: #FF483D;
+	border-radius: 6px;
+	border: 2px solid #FF483D;
+	float: left;
+	list-style-type: none;
+	cursor: pointer;
+}
+
+.searchresult-element {
+	margin: 10px;
+	padding: 5px;
+	background:  #525151;
+	border-radius: 5px;
+}
+
+.searchresult-img {
+	border-radius: 5px;
+}
+
+.searchresult-title {
+	padding: 5px;
+	display: inline;
+	color: white;
+	font-size: 19px;
+	vertical-align: top;
+}
+
+.searchresult-link {
+	text-decoration: none;
+}
+ 
+#not-result {
+	margin: 10px;
+	padding: 5px;
+	background:  #525151;
+	border-radius: 5px;
+	color:FF483D;
+	text-align: center;
+}
+
+#searhc-close {
+	margin-top: -75px;
+	margin-right: -50px;
+	float: right;
+	cursor: pointer;
+}

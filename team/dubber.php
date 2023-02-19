@@ -77,14 +77,18 @@
 		</nav>
 
 		<div id="search-box">
+		<form method="post">
 			<div id="search-content">
-			 <input type="text" name="search"> 		
+			 <input type="text" name="search" id="live-search" placeholder="Найти тайтл" autocomplete="off">  	
 			</div>
 
 			<a id="searhc-close" onclick="closeDiv()"> 
 			 <img src="../img/close.png" height="45px" width="45px"> 
 			</a>
 
+			<div id="searchresult"></div>
+	
+		</form> 
 		</div>
 
 
@@ -133,7 +137,7 @@
 
 				<div class="content-mid-l">
 					<p class="info"> Информация </p>
-					<p class="info"> <?= $dubber['description'] ?></p>
+					<p class="info"> <?= $dubber['info'] ?></p>
 				</div>
 
 				<div class="content-mid-r">
@@ -150,5 +154,35 @@
 		</div>
 
 	<script src="../js/main.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+
+				$("#live-search").keyup(function(){
+					var input = $ (this).val();
+					if(input != ""){
+						$.ajax({
+
+							url:"/vendor/search.php",
+							method:"POST",
+							data:{input:input},
+
+							success:function(data){
+								$("#searchresult").html(data);
+								$("#searchresult").css("display","block");
+							}
+						});
+					}else{
+
+						$("#searchresult").css("display","none");
+					}
+				});
+
+		});
+
+	</script>
 </body>
 </html>

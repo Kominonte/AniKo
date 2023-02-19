@@ -20,7 +20,7 @@
 			 VALUES (NULL, '$login', '$email', '$password')");
 
 		
-		header('Location: ../auth.php');
+		header('Location: ../php/login.php');
 	
 	} else {
 		$_SESSION['message'] = 'Пароли не совпали';
