@@ -64,7 +64,7 @@
 			<div id="searchresult"></div>
 	
 		</form> 
-		</div>
+		</div>>
 
 
 	<!-- Контентная часть -->

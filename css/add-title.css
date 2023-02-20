@@ -127,8 +127,8 @@ body {
 	margin: 10px;
 }
 
-input {
-	width: 780px;
+#live-search {
+	width: 760px;
 	padding: 10px;
 	font-size: 20px;
 	font-family:'Comfortaa', cursive;

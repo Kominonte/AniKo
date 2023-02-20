@@ -22,7 +22,6 @@
 			"id" => $user['id'],
 			"login" => $user['login'],
 			"email" => $user['email'],
-			"avatar" => $user['avatar']
 		];	
 
 		header('Location: ../index.php');

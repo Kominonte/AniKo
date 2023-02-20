@@ -26,7 +26,7 @@
 
 	<!-- Фон сайта -->
 
-	<img id="background" src="../img/fon-1.png">
+	<img id="background" src="../img/fon-1.png">		
 		<div id="blackout"></div>
 
 	<!-- Главное меню -->
@@ -129,6 +129,18 @@
 					</div>
 
 					</div>
+
+					<?php
+
+
+					$dub = explode(',', $title['dub'] );
+
+				 ?> <pre> <?php
+					print_r($dub)
+					?>
+</pre>
+					?>
+
 				</div>
 					
 				<div id="sidebar">

@@ -146,12 +146,49 @@
 				</div>
 
 			</div>
-		</div>
-					
-		<div id="sidebar">
-		</div>
+
+
+			<div class="content-bottom">
+				<p class="dub-title"> Тайтлы озвученные этим войсером </p>
+				<?php
+				$dubtitle = $dubber['dubber'];
+				 	$dubt = mysqli_query($connect, 
+				 		"SELECT * FROM `title` WHERE dub LIKE '%{$dubtitle}%'");
+
+				 		if(mysqli_num_rows($dubt) > 0){?>
+
+				 		<?php 
+				 			 ($row = mysqli_fetch_assoc($dubt)) {
+
+				 			$id = $row['id'];
+							$poster = $row['poster'];
+							$title = $row['title'];
+						?>
+
+						<a class="item" href="../title/title.php?id=<?php echo $id; ?>"> 
+							<img  class="poster" src="<?php echo $poster; ?>">
+						</a>
+
+							
+							<?php
+							}
+							?>
+
+						<?php
+
+							}else{
+
+							echo "<h4 id=''>Нет тайтлов которые озвучил этот войсер</h4>";
+							}
+
+						?>
+						<?php
+							?>
+
+			</div>
 
 		</div>
+					
 
 	<script src="../js/main.js"></script>
 
