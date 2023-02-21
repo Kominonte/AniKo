@@ -5,9 +5,9 @@
 
 	require_once '../vendor/connect.php';
 
-	$dubber_id = $_GET['id'];
-	$dubber = mysqli_query($connect, "SELECT * FROM `dubber` WHERE id = '$dubber_id'");
-	$dubber = mysqli_fetch_assoc($dubber);
+	$voice_id = $_GET['id'];
+	$voice = mysqli_query($connect, "SELECT * FROM `dubber` WHERE id = '$voice_id'");
+	$voice = mysqli_fetch_assoc($voice);
 ?>
 
 	<!-- end -->
@@ -21,7 +21,7 @@
 	<link rel="icon" type="image/png" sizes="512x512" href="../img/AniKo.png">
 	<link href="../css/dubber.css" rel="stylesheet" >
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-	<title><?=$dubber['dubber']?></title>
+	<title><?=$voice['dubber']?></title>
 </head>
 <body id="body">
 
@@ -101,18 +101,18 @@
 
 				
 			<div class="content-i">
-				<p class="dubber"> <?= $dubber['dubber'] ?></p>
-				<p class="info"> Имя: <?= $dubber['name'] ?></p>
-				<p class="info"> На проекте c <?= $dubber['on_project'] ?></p>
+				<p class="dubber"> <?= $voice['dubber'] ?></p>
+				<p class="info"> Имя: <?= $voice['name'] ?></p>
+				<p class="info"> На проекте c <?= $voice['on_project'] ?></p>
 				
-				<a id="btn-update"  href="../team/update-dub.php?id=<?= $dubber_id?>"> 
+				<a id="btn-update"  href="../team/update-dub.php?id=<?= $voice_id?>"> 
 				 Изменить инфу
 				</a>
 			</div>
 
 			<div class="content-a">
 
-				<img class="avatar" src="<?= $dubber['avatar'] ?>">
+				<img class="avatar" src="<?= $voice['avatar'] ?>">
 
 			</div>
 
@@ -121,13 +121,13 @@
 
 			<div class="content-link">
 				<div class="div-dub-link">
-				<a class="telegram-link" href="<?= $dubber['telegram'] ?>" 
+				<a class="telegram-link" href="<?= $voice['telegram'] ?>" 
 					target="_blank">Telegram</a>
 					<img class="telegram-link-img" src="../img/telegram.png">
 				</div>
 
 				<div class=div-dub-link>
-				<a class="youtube-link" href="<?= $dubber['youtube'] ?>" 
+				<a class="youtube-link" href="<?= $voice['youtube'] ?>" 
 					target="_blank">Youtube</a>
 					<img class="youtube-link-img" src="../img/youtube.png">
 				</div>
@@ -137,12 +137,12 @@
 
 				<div class="content-mid-l">
 					<p class="info"> Информация </p>
-					<p class="info"> <?= $dubber['info'] ?></p>
+					<p class="info"> <?= $voice['info'] ?></p>
 				</div>
 
 				<div class="content-mid-r">
 					<p class="info"> Цитата </p>
-					<p class="info"> <?= $dubber['quote'] ?></p>
+					<p class="info"> <?= $voice['quote'] ?></p>
 				</div>
 
 			</div>
@@ -151,14 +151,14 @@
 			<div class="content-bottom">
 				<p class="dub-title"> Тайтлы озвученные этим войсером </p>
 				<?php
-				$dubtitle = $dubber['dubber'];
+				$dubtitle = $voice['dubber'];
 				 	$dubt = mysqli_query($connect, 
 				 		"SELECT * FROM `title` WHERE dub LIKE '%{$dubtitle}%'");
 
 				 		if(mysqli_num_rows($dubt) > 0){?>
 
 				 		<?php 
-				 			 ($row = mysqli_fetch_assoc($dubt)) {
+				 		while ($row = mysqli_fetch_assoc($dubt)) {
 
 				 			$id = $row['id'];
 							$poster = $row['poster'];
@@ -173,17 +173,13 @@
 							<?php
 							}
 							?>
-
-						<?php
+			<?php
 
 							}else{
 
 							echo "<h4 id=''>Нет тайтлов которые озвучил этот войсер</h4>";
 							}
-
 						?>
-						<?php
-							?>
 
 			</div>
 

@@ -384,6 +384,8 @@ body {
 
 .big-des {
 	display: block;
+	text-decoration: none;
+	color: white;
 }
 
 #div-btn-update {

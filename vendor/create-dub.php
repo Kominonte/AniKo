@@ -14,7 +14,7 @@
 
 
 	mysqli_query($connect, 
-		"INSERT INTO `dubber` (`id`, `avatar`, `dubber`, `name`, `on_project`, `telegram`, `youtube`, `info`, `quote`) VALUES (NULL, '$avatar', '$dubber', '$name', '$on_project', '$telegram', '$youtube', '$info', '$quote')");
+		"INSERT INTO `dubber` (`id`, `avatar`, `dubber`, `name`, `on_project`, `telegram`, `youtube`, `description`, `quote`) VALUES (NULL, '$avatar', '$dubber', '$name', '$on_project', '$telegram', '$youtube', '$info', '$quote')");
 
 
 	

@@ -9,6 +9,7 @@
 
 	$comment = mysqli_query($connect, "SELECT * FROM `comment` WHERE title_id = '$title_id' ");
 	$comment = mysqli_fetch_all($comment);
+
 ?>
 
 <!DOCTYPE html>
@@ -130,16 +131,45 @@
 
 					</div>
 
-					<?php
+					<?php 
 
 
-					$dub = explode(',', $title['dub'] );
 
-				 ?> <pre> <?php
-					print_r($dub)
+					 ?>
+
+				  <pre> <?php 
+
+				  	$dub = explode(',', $title['dub'] );
+						
+					
+
+				  	foreach  ($dub as $element){ 
+
+					$dubt = mysqli_query($connect, 
+					"SELECT * FROM `dubber` WHERE `dubber` LIKE '{$element}%'");
+					
+					if(mysqli_num_rows($dubt) > 0){
+						
+					$row = mysqli_fetch_assoc($dubt); {
+					
+						$id = $row['id'];
+						
+						$dubber = $row['dubber'];
+					}
+					} else {
+						
+						
+					}
+
+print_r($row);
+
+				  	}
+					
+
+
+					
 					?>
-</pre>
-					?>
+						</pre>
 
 				</div>
 					
@@ -187,7 +217,10 @@
 
 						<div class="des">
 							<p class="big-des-l"> Озвучили </p>
-							<p class="big-des"> <?= $title['dub']?> </p>
+							<a class="big-des"
+							href="../team/dubber.php?id=<?php echo $voiceid; ?>">
+							 <?php echo $voice; ?>
+							</a>
 						</div>
 
 						<div class="des">
