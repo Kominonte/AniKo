@@ -6,6 +6,32 @@ use App\services\Router;
 
 class Authorization 
 {
+
+	public function authorization($data){
+
+		$email = $data["email"];
+		$password = $data["password"];
+
+		$user = \R::findOne('users', 'email = ?', [$email]);
+
+		if(!$user){
+			die("Пользователь не найден");
+		}
+
+		if(password_verify($password, $user->password)){
+			session_start();
+			$_SESSION["user"] = [
+				"id" => $user->id,
+				"login" => $user->login,
+				"group" => $user->group,
+			];
+
+			Router::redirect('/');
+		} else{
+			die('Не верные данные авторизации');
+		}
+	}
+
 	public function register($data){
 
 		$login = $data["login"];
@@ -20,10 +46,16 @@ class Authorization
 		$user = \R::dispense('users');
 		$user->login = $login;
 		$user->email = $email;
+		$user->group = 1;
 		$user->password = password_hash($password, PASSWORD_DEFAULT);
 
 		\R::store($user);
 
-		Router::redirect('login');
+		Router::redirect('/login');
+	}
+
+	public function logout(){
+		unset($_SESSION['user']);
+		Router::redirect('/login');
 	}
 }

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 use	App\services\App;
 
 	require_once __DIR__ . "/vendor/autoload.php";	//Подключаем autoload

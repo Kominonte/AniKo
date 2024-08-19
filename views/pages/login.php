@@ -18,22 +18,27 @@
 			<img class="welcome-img" src="..\assets\mascot\yokoso.webp">
 		</div>
 		<div id="box-login">
-			<form id="form-authorization">
+			<!-- Авторизация -->
+			<form id="form-authorization" action="/auth/authorization" method="POST">
 				<span class="label-section">Авторизация</span>
+
 				<div class="entryarea">
 					<input class="input" type="text" name="email" required>
 					<div class="laballine">Почта</div>
 				</div>
+
 				<div class="entryarea">
 					<input class="input" type="password" name="password" required>
 					<div class="laballine">Пароль</div>
 				</div>
+
 				<button id="login-btn" class="auth-btn">Войти</button>
 
 				<span class="label-conductor">Нету аккаунта ?</span>
 				<button class="swap-auth-btn" type="button" onclick="registration()">Регистрация</button>
 			</form>
 
+			<!-- Ригистрация -->
 			<form id="form-registration" action="/auth/register" method="POST">
 				<span class="label-section">Регистрация</span>
 

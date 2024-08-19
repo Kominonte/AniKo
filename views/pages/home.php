@@ -20,6 +20,7 @@ use App\services\Component;
 
 	<div id="main">
 		<a href="/login" class="go-home-btn">Авторизация / Регистрация</a>
+		<a href="/user" class="go-home-btn">Профиль</a>
 	</div>
 
 	<script type="text/javascript" src="../libs/jquery-3.7.1.min.js"></script>
