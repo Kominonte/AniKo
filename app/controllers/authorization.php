@@ -15,11 +15,10 @@ class Authorization
 		$user = \R::findOne('users', 'email = ?', [$email]);
 
 		if(!$user){
-			die("Пользователь не найден");
+			echo "Пользователь не найден";
 		}
 
 		if(password_verify($password, $user->password)){
-			session_start();
 			$_SESSION["user"] = [
 				"id" => $user->id,
 				"login" => $user->login,
@@ -28,7 +27,7 @@ class Authorization
 
 			Router::redirect('/');
 		} else{
-			die('Не верные данные авторизации');
+			echo 'Не верные данные авторизации';
 		}
 	}
 

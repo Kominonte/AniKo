@@ -78,10 +78,11 @@ body {
 
 .welcome-name {
 	display: block;
-	margin: 0 auto;
+	margin: -20px auto;
 	color: var(--main-color);
 	text-align: center;
 	font-size: 3rem;
+	font-weight: 600;
 }
 
 @keyframes registration {

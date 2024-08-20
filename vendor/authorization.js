@@ -7,7 +7,7 @@ $('#login-btn').click(function() {
 		password = $('input[name="password"]').val();
 
 	$.ajax({
-		url: 'vendor/authorization.php',
+		url: '/auth/authorization',
 		type: 'POST',
 		dataType: 'text',
 		data: {
@@ -15,7 +15,7 @@ $('#login-btn').click(function() {
 			password: password
 		},
 		success: function(data){
-			alert(data);
+			console.log(data);
 		}
 	})
 })
@@ -40,7 +40,7 @@ $('#register-btn').click(function() {
 			secondPassword: secondPassword
 		},
 		success: function(data){
-			alert(data);
+			console.log(data);
 		}
 	})
 })
