@@ -7,15 +7,15 @@ $('#login-btn').click(function() {
 		password = $('input[name="password"]').val();
 
 	$.ajax({
-		url: '/auth/authorization',
+		url: 'auth/authorization',
 		type: 'POST',
-		dataType: 'text',
+		dataType: 'json',
 		data: {
 			email: email,
 			password: password
 		},
-		success: function(data){
-			console.log(data);
+		success(data){
+			console.log(data.message);
 		}
 	})
 })
@@ -30,7 +30,7 @@ $('#register-btn').click(function() {
 		secondPassword = $('input[name="second-password"]').val();
 
 	$.ajax({
-		url: 'vendor/authorization.php',
+		url: 'vendor/authorization',
 		type: 'POST',
 		dataType: 'text',
 		data: {
@@ -40,7 +40,7 @@ $('#register-btn').click(function() {
 			secondPassword: secondPassword
 		},
 		success: function(data){
-			console.log(data);
+			alert(data);
 		}
 	})
 })

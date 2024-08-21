@@ -148,7 +148,6 @@ body {
 	background-color: transparent;
 	transition: 0.2s ease;
 	z-index: 0;
-	animation-name: error;
 	animation-duration: 0.4s;
 }
 
