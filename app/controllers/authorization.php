@@ -8,37 +8,59 @@ class Authorization
 {
 
 	public function authorization($data){
+			
+			$email = $data["email"];
+			$password = $data["password"];
 
-		$email = $data["email"];
-		$password = $data["password"];
+			$user = \R::findOne('users', 'email = ?', [$email]);
 
-		$user = \R::findOne('users', 'email = ?', [$email]);
+			$response = [];
+			$errors = 0;
 
-		if(!$user){
-			$response = [
-				"status" => false,
-				"message" => 'error user'
-			];
+			if(!$user){
+				$response += [
+							"email" => [
+								"status" => false,
+								"message" => 'Пользователь не найден'
+							]];
+				
+				$errors	+= 1;
+			}else{
+				$response += [
+							"email" => [
+								"status" => true,
+								"message" => 'Пользователь найден'
+							]];
+			}
+
+			if(password_verify($password, $user->password)){
+				$_SESSION["user"] = [
+					"id" => $user->id,
+					"login" => $user->login,
+					"group" => $user->group
+				];
+
+				$response += [
+							"password" => [
+								"status" => true,
+								"message" => 'Пароль верный'
+							]];
+
+			}else{
+				$response += [
+							"password" => [
+								"status" => false,
+								"message" => 'Неверный пароль'
+							]];
+				
+				$errors	+= 1;		
+			}
+
+			if($errors == 0){
+				$response += ["authorization" => true];
+			}
+
 			echo json_encode($response);
-		}
-
-		if(password_verify($password, $user->password)){
-			$_SESSION["user"] = [
-				"id" => $user->id,
-				"login" => $user->login,
-				"group" => $user->group,
-			];
-
-			Router::redirect('/');
-		} else{
-
-			$response = [
-				"status" => false,
-				"message" => 'error auth'
-			];
-
-			echo json_encode($response);
-		}
 	}
 
 	public function register($data){
@@ -46,21 +68,78 @@ class Authorization
 		$login = $data["login"];
 		$email = $data["email"];
 		$password = $data["password"];
-		$confPassword = $data["conf-password"];
+		$confPassword = $data["secondPassword"];
 
-		if($password !== $confPassword){
-			die("password error");
+		$response = [];
+		$errors = 0;
+
+		if($user = \R::findOne('users', 'login = ?', [$login])){
+
+			$message = 'Логин'.$login .'уже занят';
+
+			$response += [
+						"login" => [
+							"status" => false,
+							"message" => $message
+						]];
+			
+			$errors	+= 1;
+		}else{
+			$response += [
+						"login" => [
+							"status" => true,
+							"message" => 'Логин свободен'
+						]];
 		}
 
-		$user = \R::dispense('users');
-		$user->login = $login;
-		$user->email = $email;
-		$user->group = 1;
-		$user->password = password_hash($password, PASSWORD_DEFAULT);
+		$user = \R::findOne('users', 'email = ?', [$email]);
 
-		\R::store($user);
+		if($user["email"] == $email){
+			$response += [
+						"email" => [
+							"status" => false,
+							"message" => 'Почта уже занята'
+						]];
+			$errors	+= 1;
+		}else{
+			$response += [
+						"email" => [
+							"status" => false,
+							"message" => 'Почта свободна'
+			  			]];
+		}
 
-		Router::redirect('/login');
+
+		if($password !== $confPassword){
+			$response += [
+				"password" => [
+					"status" => false,
+					"message" => 'Пароли не совпали'
+				  ]];
+
+		$errors	+= 1;
+
+		}else{
+			$response += [
+						"password" => [
+							"status" => false,
+							"message" => 'Пароли совпали'
+						]];
+		}	
+
+		if($errors == 0){
+			$user = \R::dispense('users');
+			$user->login = $login;
+			$user->email = $email;
+			$user->group = 1;
+			$user->password = password_hash($password, PASSWORD_DEFAULT);
+
+			\R::store($user);
+
+			$response += ["registration" => true];
+		}
+
+		echo json_encode($response);
 	}
 
 	public function logout(){

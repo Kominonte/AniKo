@@ -14,33 +14,110 @@ $('#login-btn').click(function() {
 			email: email,
 			password: password
 		},
-		success(data){
-			console.log(data.message);
+		success(response){
+			console.log(response);
+
+			$('.message').removeClass('er-message');
+
+			
+			if(response.email.status === false){
+				$('.message').toggleClass('er-message');
+				$('.message').text(response.email.message);
+				$('.welcome-img').attr('src', '../assets/mascot/ups.webp');
+
+				let dur = 0.5;
+      			$('input[name="email"]').toggleClass('error');
+      			setTimeout(() => $('input[name="email"]').removeClass('error'), dur * 1000);
+				return;
+			}
+
+			if(response.password.status === false){
+				$('.message').toggleClass('er-message');
+				$('.welcome-img').attr('src', '../assets/mascot/ups.webp');	
+				$('.message').text(response.password.message);
+
+				let dur = 0.5;
+      			$('input[name="password"]').toggleClass('error');
+      			setTimeout(() => $('input[name="password"]').removeClass('error'), dur * 1000);
+				return;
+			}
+
+			if(response.authorization === true){
+				$('.message').removeClass('er-message');
+				document.location.href = '/';
+			}
+
+
 		}
 	})
 })
-
 // Регистрация
 
 $('#register-btn').click(function() {
 
-	let login = $('input[name="login"]').val(),
-		email = $('input[name="email"]').val();
-		password = $('input[name="password"]').val();
-		secondPassword = $('input[name="second-password"]').val();
+	let login = $('#reg-login').val(),
+		email = $('#reg-email').val();
+		password = $('#reg-password').val();
+		secondPassword = $('#reg-conf-password').val();
 
 	$.ajax({
-		url: 'vendor/authorization',
+		url: 'auth/register',
 		type: 'POST',
-		dataType: 'text',
+		dataType: 'json',
 		data: {
 			login: login,
 			email: email,
 			password: password,
 			secondPassword: secondPassword
 		},
-		success: function(data){
-			alert(data);
+		success: function(response){
+			console.log(response);
+
+			$('.message').removeClass('er-message');
+
+			if(response.login.status === false){
+				$('.message').toggleClass('er-message');
+				$('.message').text(response.login.message);
+
+				let dur = 0.5;
+      			$('#reg-login').toggleClass('error');
+      			setTimeout(() => $('#reg-login').removeClass('error'), dur * 1000);
+
+				$('.welcome-img').attr('src', '../assets/mascot/ups.webp');	
+				return;
+			}
+
+			if(response.email.status === false){
+				$('.message').toggleClass('er-message');
+				$('.message').text(response.email.message);
+				$('.welcome-img').attr('src', '../assets/mascot/ups.webp');
+				
+				let dur = 0.5;
+      			$('#reg-email').toggleClass('error');
+      			setTimeout(() => $('#reg-email').removeClass('error'), dur * 1000);
+				
+				return;
+			}
+
+			if(response.password.status === false){
+				$('.message').toggleClass('er-message');
+				$('.message').text(response.password.message);
+				$('.welcome-img').attr('src', '../assets/mascot/ups.webp');	
+
+				let dur = 0.5;
+      			$('#reg-conf-password').toggleClass('error');
+      			setTimeout(() => $('#reg-conf-password').removeClass('error'), dur * 1000);
+
+				return;
+			}
+
+			if(response.registration === true){
+				$('.message').removeClass('er-message');
+
+				$('#form-authorization').css('animation-name', 'authorization');
+				$('#form-authorization').css('margin-top', '0px');
+
+			}
 		}
 	})
 })

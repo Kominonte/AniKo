@@ -15,6 +15,7 @@
 			<span class="label-section">на сайт</span>
 			<br>
 			<span class="welcome-name">AniKo</span>
+			<div class="message"></div>
 			<img class="welcome-img" src="..\assets\mascot\yokoso.webp">
 		</div>
 		<div id="box-login">
@@ -43,22 +44,22 @@
 				<span class="label-section">Регистрация</span>
 
 				<div class="entryarea">
-					<input class="input" type="text" name="login" required>
+					<input id="reg-login" class="input" type="text" name="login" required>
 					<div class="laballine">Логин</div>
 				</div>
 
 				<div class="entryarea">
-					<input class="input" type="text" name="email" required>
+					<input id="reg-email" class="input" type="text" name="email" required>
 					<div class="laballine">Почта</div>
 				</div>
 
 				<div class="entryarea">
-					<input class="input" type="password" name="password" required>
+					<input id="reg-password" class="input" type="password" name="password" required>
 					<div class="laballine">Пароль</div>
 				</div>
 
 				<div class="entryarea">
-					<input class="input" type="password" name="conf-password" required>
+					<input id="reg-conf-password" class="input" type="password" name="conf-password" required>
 					<div class="laballine">Проверочный пароль</div>
 				</div>
 
