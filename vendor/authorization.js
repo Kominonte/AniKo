@@ -6,6 +6,20 @@ $('#login-btn').click(function() {
 	let email = $('input[name="email"]').val(),
 		password = $('input[name="password"]').val();
 
+		let dur = 0.5;
+
+	if(!email){	
+		$('#log-email').toggleClass('error');
+		setTimeout(() => $('#log-email').removeClass('error'), dur * 1000);
+		return;
+	}
+
+	if(!password){
+		$('#log-password').toggleClass('error');
+		setTimeout(() => $('#log-password').removeClass('error'), dur * 1000);
+		return;
+	}
+
 	$.ajax({
 		url: 'auth/authorization',
 		type: 'POST',
@@ -59,6 +73,32 @@ $('#register-btn').click(function() {
 		email = $('#reg-email').val();
 		password = $('#reg-password').val();
 		secondPassword = $('#reg-conf-password').val();
+
+	let dur = 0.5;
+
+	if(!login){
+		$('#reg-login').toggleClass('error');
+		setTimeout(() => $('#reg-login').removeClass('error'), dur * 1000);
+		return;
+	}
+
+	if(!email){
+		$('#reg-email').toggleClass('error');
+		setTimeout(() => $('#reg-email').removeClass('error'), dur * 1000);
+		return;
+	}
+
+	if(!password){
+		$('#reg-password').toggleClass('error');
+		setTimeout(() => $('#reg-password').removeClass('error'), dur * 1000);
+		return;
+	}
+
+	if(!secondPassword){
+		$('#reg-conf-password').toggleClass('error');
+		setTimeout(() => $('#reg-conf-password').removeClass('error'), dur * 1000);
+		return;
+	}
 
 	$.ajax({
 		url: 'auth/register',

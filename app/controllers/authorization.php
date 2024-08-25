@@ -7,16 +7,20 @@ use App\services\Router;
 class Authorization 
 {
 
+	// Авторизация
 	public function authorization($data){
 			
-			$email = $data["email"];
-			$password = $data["password"];
+			// Данные с формы
+			$email = trim($data["email"]);
+			$password = trim($data["password"]);
 
+			// Ишем пользоватлея по введенной почте
 			$user = \R::findOne('users', 'email = ?', [$email]);
 
-			$response = [];
-			$errors = 0;
+			$response = [];	//Массив для ответа сервера
+			$errors = 0;	//Переменная для ошибок 
 
+			// Проверка есть ли такой пользователь по $email
 			if(!$user){
 				$response += [
 							"email" => [
@@ -33,6 +37,7 @@ class Authorization
 							]];
 			}
 
+			// Проверяем пароль на правильность
 			if(password_verify($password, $user->password)){
 				$_SESSION["user"] = [
 					"id" => $user->id,
@@ -56,26 +61,31 @@ class Authorization
 				$errors	+= 1;		
 			}
 
+			// Если нет ошибок, то авторизация пройдена
 			if($errors == 0){
 				$response += ["authorization" => true];
 			}
-
+			
+			// Отправка даннык клиенту
 			echo json_encode($response);
 	}
 
+	// Регистрация
 	public function register($data){
 
-		$login = $data["login"];
-		$email = $data["email"];
-		$password = $data["password"];
-		$confPassword = $data["secondPassword"];
+		// Данные с формы
+		$login = trim($data["login"]);
+		$email = trim($data["email"]);
+		$password = trim($data["password"]);
+		$confPassword = trim($data["secondPassword"]);
 
-		$response = [];
-		$errors = 0;
+		$response = []; // Ответ сервера
+		$errors = 0;	// Переменная с ошибками
 
+		// Проверяем, есть ли такой пользователь с таким логином
 		if($user = \R::findOne('users', 'login = ?', [$login])){
 
-			$message = 'Логин'.$login .'уже занят';
+			$message = 'Логин ' . $login .' уже занят';
 
 			$response += [
 						"login" => [
@@ -92,6 +102,7 @@ class Authorization
 						]];
 		}
 
+		// Проверяем, есть ли такой пользователь с такой почтой
 		$user = \R::findOne('users', 'email = ?', [$email]);
 
 		if($user["email"] == $email){
@@ -104,12 +115,12 @@ class Authorization
 		}else{
 			$response += [
 						"email" => [
-							"status" => false,
+							"status" => true,
 							"message" => 'Почта свободна'
 			  			]];
 		}
 
-
+		// Проверяем, совпадают ли пароль и проверочный пароль
 		if($password !== $confPassword){
 			$response += [
 				"password" => [
@@ -122,11 +133,12 @@ class Authorization
 		}else{
 			$response += [
 						"password" => [
-							"status" => false,
+							"status" => true,
 							"message" => 'Пароли совпали'
 						]];
 		}	
 
+		// Если ошибок не, то загоняем пользователя в базу
 		if($errors == 0){
 			$user = \R::dispense('users');
 			$user->login = $login;
@@ -138,10 +150,12 @@ class Authorization
 
 			$response += ["registration" => true];
 		}
-
+		
+		// Отправка данных клиенту
 		echo json_encode($response);
 	}
 
+	// Выход из аккаунта
 	public function logout(){
 		unset($_SESSION['user']);
 		Router::redirect('/login');

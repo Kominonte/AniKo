@@ -24,12 +24,12 @@
 				<span class="label-section">Авторизация</span>
 
 				<div class="entryarea">
-					<input class="input" type="text" name="email" required>
+					<input class="input log-field" id="log-email" type="text" name="email" required>
 					<div class="laballine">Почта</div>
 				</div>
 
 				<div class="entryarea">
-					<input class="input" type="password" name="password" required>
+					<input class="input log-field" id="log-password" type="password" name="password" required>
 					<div class="laballine">Пароль</div>
 				</div>
 

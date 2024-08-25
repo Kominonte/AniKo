@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+	--main-color: #FF7171;
+	--main-color-dark: #9d3c3c;
+
+	--text-main-color: #FF7171;
+	--text-main-color-light: #FFE7E7;
+    --text-main-color-dark: #292929;
+
+	--background: #151515;
+	--box-color: #222222;
+
+    --btn-main-color: #FF7171;
+	--btn-main-color-emphasize: #ffabab;
+
+	--error: #ff5757;
+}
