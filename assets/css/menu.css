@@ -18,7 +18,7 @@ body {
 }
 
 .menu:hover {
-	width: 250px;
+	width: 300px;
 }
 
 .menu:hover > .menu-link > .menu-item > .menu-item-label {
@@ -104,7 +104,7 @@ body {
 #mini-background {
 	position: absolute;
 	opacity: 0;
-	width: 250px;
+	width: 300px;
 	top: 0px;
 	left: 0px;
 	aspect-ratio: 16 / 9;
@@ -118,7 +118,7 @@ body {
 	opacity: 1;
 	float: right;
 	left: 0px;
-	width: 250px;
+	width: 300px;
 	aspect-ratio: 16 / 9;
 
 }
@@ -158,8 +158,8 @@ body {
 }
 
 .menu:hover > .menu-link > #mini-pofile {
-	width: 250px;
-	aspect-ratio: 16 / 9.5;
+	width: 300px;
+	aspect-ratio: 16 / 9.4;
 }
 
 #login {
