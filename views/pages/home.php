@@ -45,10 +45,19 @@ use App\services\Component;
 		<div id="updates-box">
 			<div id="updates-info-top">
 				<span class="updates-info-label">Новые серии</span>
-				<div id="updates-info-empty"></div>
-				<span id="updates-info-season">Лето 24</span>
+				<div id="updates-info-empty"></div>	
 				<span id="updates-info-season-label">Сезон</span>
-				
+				<span id="updates-info-season">Лето 24</span>
+			</div>
+
+			<div id="updates-wrapper">
+				<div class="updates-title"></div>
+				<div class="updates-title"></div>
+				<div class="updates-title"></div>
+				<div class="updates-title"></div>
+				<div class="updates-title"></div>
+				<div class="updates-title"></div>
+				<div class="updates-title"></div>
 			</div>
 
 		</div>

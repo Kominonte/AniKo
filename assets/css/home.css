@@ -35,6 +35,7 @@ body {
 }
 
 #updates-info-top {
+	display: flex;
 	width: 100%;
 }
 
@@ -42,6 +43,7 @@ body {
 	display: inline-block;
 	float: left;
 	width: auto;
+	margin-right: 10px;
 	padding: 7px 20px;
 	border-radius: 10px;
 	background-color: var(--box-color);
@@ -51,7 +53,8 @@ body {
 
 #updates-info-empty {
 	display: inline-block;
-	width: auto;
+	flex: 1;
+	margin-right: 10px;
 	padding: 21px 20px;
 	border-radius: 10px;
 	background-color: var(--box-color);
@@ -80,4 +83,19 @@ body {
 	background-color: var(--box-color);
 	color: var(--text-main-color);
 	font-size: 1.3rem;
+}
+
+#updates-wrapper {
+	display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.updates-title {
+	width: 14.2857142857%;
+	margin: 10px;
+	aspect-ratio: 3 / 4;
+	background-color: red;
 }
