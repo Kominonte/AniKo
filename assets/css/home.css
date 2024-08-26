@@ -27,7 +27,6 @@ body {
 
 #updates-box {
 	width: 100%;
-	height: 300px;
 	margin: 0px 0px 0px 0px;
 	padding: 10px;
 	border-radius: 20px;
@@ -93,9 +92,42 @@ body {
     justify-content: space-between;
 }
 
+
 .updates-title {
 	width: 14.2857142857%;
-	margin: 10px;
-	aspect-ratio: 3 / 4;
-	background-color: red;
+	margin: 10px 10px 4px 0px;
+	border-radius: 10px;
+	background-color: var(--preloader-color);
+	/* animation-name: preloader;
+	animation-duration: 1s;
+	animation-iteration-count: infinite; */
+	cursor: pointer;
+}
+
+.updates-title:last-child {
+	margin: 10px 0px 0px 0px;
+}
+
+.updates-title-name {
+	opacity: 0;
+	position: absolute;
+	color: var(--text-main-color-light);
+	text-align: center;
+	width: 14.2857142857%;
+	z-index: 10;
+}
+
+.updates-title-img {
+	width: 100%;
+	border-radius: 10px;
+	margin: 0px 0px -10px 0px;
+	transition: 0.3s;
+}
+
+.updates-title:hover > .updates-title-img {
+	filter: brightness(50%);
+}
+
+.updates-title:hover > .updates-title-name {
+	opacity: 1;
 }

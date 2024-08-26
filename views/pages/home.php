@@ -1,27 +1,27 @@
 <?php
 use App\services\Component;
 
-    // // Пример использования cURL для отправки HTTP-запроса
+    // Пример использования cURL для отправки HTTP-запроса
 
-    // // Инициализация cURL-сессии
-    // $ch = curl_init();
+    // Инициализация cURL-сессии
+    $ch = curl_init();
 
-    // // Установка параметров запроса
-    // curl_setopt($ch, CURLOPT_URL, 'https://anilibria.top/api/v1/anime/releases/latest?limit=8');
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    // Установка параметров запроса
+    curl_setopt($ch, CURLOPT_URL, 'https://anilibria.top/api/v1/anime/releases/latest?limit=7');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    // // Выполнение запроса и получение результата
-    // $response = json_decode(curl_exec($ch));
+    // Выполнение запроса и получение результата
+    $response = json_decode(curl_exec($ch));
 
-    // // Проверка наличия ошибок
-    // if (curl_errno($ch)) {
-    //     echo 'Ошибка cURL: ' . curl_error($ch);
-    // }
+    // Проверка наличия ошибок
+    if (curl_errno($ch)) {
+        echo 'Ошибка cURL: ' . curl_error($ch);
+    }
 
-    // // Завершение сессии cURL
-    // curl_close($ch);
+    // Завершение сессии cURL
+    curl_close($ch);
 
-    // // Обработка полученного результата
+    // Обработка полученного результата
 
 ?>
 
@@ -51,16 +51,19 @@ use App\services\Component;
 			</div>
 
 			<div id="updates-wrapper">
-				<div class="updates-title"></div>
-				<div class="updates-title"></div>
-				<div class="updates-title"></div>
-				<div class="updates-title"></div>
-				<div class="updates-title"></div>
-				<div class="updates-title"></div>
-				<div class="updates-title"></div>
+			<?php 
+				foreach($response as $response){
+
+			?>
+				<div class="updates-title">
+					<span class="updates-title-name"><?= $response->name->main ?></span>
+					<img class="updates-title-img" src="https://anilibria.top<?= $response->poster->optimized->src ?>">
+				</div>
+			<?php } ?>
 			</div>
 
 		</div>
+
 	
 		<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 		<video id="video" controls></video>
