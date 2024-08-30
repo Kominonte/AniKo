@@ -14,7 +14,7 @@
 				</div>
 			</a>
 		<?php }else{ ?>
-			<a class="menu-link" href="/user">
+			<a class="menu-link" href="/user?id=<?php print_r($_SESSION["user"]["login"]) ?>">
 				<div id="mini-pofile">
 					<img id="mini-background" src="../uploads/mini-background/no-mini-background.webp">
 					<div id="avatar-wrapper">

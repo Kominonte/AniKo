@@ -56,8 +56,11 @@ use App\services\Component;
 
 			?>
 				<div class="updates-title">
+				<a href="/title?id=<?= $response->id ?>" class="updates-title-link">
 					<span class="updates-title-name"><?= $response->name->main ?></span>
+					<span class="updates-title-last-episode">Серия <?= $response->latest_episode->ordinal ?></span>
 					<img class="updates-title-img" src="https://anilibria.top<?= $response->poster->optimized->src ?>">
+				</a>
 				</div>
 			<?php } ?>
 			</div>
