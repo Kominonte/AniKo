@@ -62,9 +62,12 @@ body {
 
 #series-box {
     display: flex;
+    padding: 5px;
     gap: 10px; 
     flex-wrap: wrap;
 	flex-direction: row;
+    border-radius: 10px;
+    background-color: var(--box-color);
 }
 
 .but-link {
@@ -72,7 +75,7 @@ body {
     padding: 10px;
     background-color: var(--main-color);
     border: none;
-    border-radius: 10px;
+    border-radius: 7px;
     color: var(--text-main-color-dark);
     font-family: 'Nunito';	
     font-size: 1.0rem;
@@ -83,4 +86,8 @@ body {
 
 .but-link:active {
     scale: 0.9;
+}
+
+#progress {
+    width: 100%;
 }
